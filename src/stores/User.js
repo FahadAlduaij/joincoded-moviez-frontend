@@ -3,9 +3,6 @@ import { action, makeObservable, observable } from "mobx";
 import instance from "../api/instance";
 
 class UserData {
-	user = null;
-	signed = false;
-
 	constructor() {
 		makeObservable(this, {
 			user: observable,
@@ -16,6 +13,8 @@ class UserData {
 		});
 	}
 
+	user = null;
+	signed = false;
 
 	setUser = (token) => {
 		localStorage.setItem("myToken", token);
@@ -28,10 +27,10 @@ class UserData {
 		if (token) {
 			let tempUser = decode(token);
 			if (tempUser.exp > Date.now()) {
-				this.signed = true
+				this.signed = true;
 				return this.setUser(token);
 			} else {
-				this.signed = false
+				this.signed = false;
 				return this.signOut();
 			}
 		}

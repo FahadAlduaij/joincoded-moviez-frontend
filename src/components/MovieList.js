@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import MovieCard from "./MovieCard";
+import movieData from "../stores/MovieData";
+import { observer } from "mobx-react";
 
 function MovieList() {
-    return (
-        <div>
-            
-        </div>
-    )
+	const movieList = movieData.movies.map((movie) => (
+		<MovieCard key={movie._id} movie={movie} />
+	));
+	return <div>{movieList}</div>;
 }
 
-export default MovieList
+export default observer(MovieList);

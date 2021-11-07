@@ -60,7 +60,7 @@ function Sign() {
 			) : (
 				<Dropdown>
 					<Dropdown.Toggle variant="dark" id="dropdown-basic">
-						Dropdown Button
+						Sign in
 					</Dropdown.Toggle>
 
 					<Dropdown.Menu>
