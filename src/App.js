@@ -1,12 +1,20 @@
-import { Routes } from "react-router";
 import "./App.css";
+import { Route, Routes } from "react-router";
+import { Container } from "react-bootstrap";
 import NavBar from "./components/NavBar";
+import MovieList from "./components/MovieList";
+import HomePage from "./components/HomePage";
 
 function App() {
 	return (
 		<div>
 			<NavBar />
-			<Routes></Routes>
+			<Container>
+				<Routes>
+					<Route path="/movies" element={<MovieList />} />
+					<Route path="/" element={<HomePage />} />
+				</Routes>
+			</Container>
 		</div>
 	);
 }
