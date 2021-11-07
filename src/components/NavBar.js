@@ -1,6 +1,7 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Sign from "./Sign";
 
 function NavBar() {
 	return (
@@ -19,6 +20,8 @@ function NavBar() {
 						</Navbar.Brand>
 					</Link>
 				</Container>
+
+				<Sign />
 			</Navbar>
 		</>
 	);

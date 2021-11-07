@@ -1,5 +1,5 @@
 import decode from "jwt-decode";
-import { makeObservable, observable, makeObservable, action } from "mobx";
+import { action, makeObservable, observable } from "mobx";
 import instance from "../api/instance";
 
 class UserData {
@@ -9,20 +9,18 @@ class UserData {
 	constructor() {
 		makeObservable(this, {
 			user: observable,
+			signed: observable,
 			signIn: action,
 			signUp: action,
 			signOut: action,
 		});
 	}
 
+
 	setUser = (token) => {
-		try {
-			localStorage.setItem("myToken", token);
-			instance.defaults.headers.common.Authorization = `Bearer ${token}`;
-			this.user = decode(token);
-		} catch (error) {
-			console.log(error);
-		}
+		localStorage.setItem("myToken", token);
+		instance.defaults.headers.common.Authorization = `Bearer ${token}`;
+		this.user = decode(token);
 	};
 
 	checkForToken = () => {
@@ -30,8 +28,10 @@ class UserData {
 		if (token) {
 			let tempUser = decode(token);
 			if (tempUser.exp > Date.now()) {
+				this.signed = true
 				return this.setUser(token);
 			} else {
+				this.signed = false
 				return this.signOut();
 			}
 		}
@@ -39,9 +39,10 @@ class UserData {
 
 	signIn = async (userInfo) => {
 		try {
-			const res = instance.post("/user/signin", userInfo);
+			const res = await instance.post("/user/signin", userInfo);
 			this.setUser(res.data.token);
 			this.signed = true;
+			console.log(res.data.token);
 		} catch (error) {
 			console.log(error);
 		}
@@ -49,7 +50,7 @@ class UserData {
 
 	signUp = async (userInfo) => {
 		try {
-			const res = instance.post("/user/signup", userInfo);
+			const res = await instance.post("/user/signup", userInfo);
 			this.setUser(res.data.token);
 		} catch (error) {
 			console.log(error);

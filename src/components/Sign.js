@@ -1,0 +1,166 @@
+import React from "react";
+import { Form, Button, Container, Modal } from "react-bootstrap";
+import { useState } from "react";
+import userData from "../stores/User";
+import { observer } from "mobx-react-lite";
+
+function Sign() {
+	const [data, setData] = useState({
+		username: "",
+		password: "",
+		email: "",
+	});
+
+	const [showCreateNewUser, setShowCreateNewUser] = useState(false);
+	const [show, setShow] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = () => {
+		setShow(true);
+		setShowCreateNewUser(false);
+	};
+
+	const handleChange = (event) => {
+		setData({ ...data, [event.target.name]: event.target.value });
+	};
+
+	const handleSignIn = (event) => {
+		event.preventDefault();
+		userData.signIn(data);
+		setShowCreateNewUser(false);
+		handleClose();
+	};
+
+	const goToSignUp = (event) => {
+		event.preventDefault();
+		setShowCreateNewUser(true);
+	};
+	const goToSignIn = (event) => {
+		event.preventDefault();
+		setShowCreateNewUser(false);
+	};
+
+	const handleSignUp = (event) => {
+		event.preventDefault();
+		userData.signUp(data);
+	};
+
+	const handleSignOut = (event) => {
+		event.preventDefault();
+		userData.signOut();
+	};
+
+	return (
+		<div>
+			{userData.signed ? (
+				<Button variant="danger" onClick={handleSignOut}>
+					Logout
+				</Button>
+			) : (
+				<Button variant="secondary" onClick={handleShow}>
+					Sign in
+				</Button>
+			)}
+
+			{showCreateNewUser ? (
+				<Modal show={show} onHide={handleClose}>
+					<Modal.Header closeButton>
+						<Modal.Title>SIGN UP</Modal.Title>
+					</Modal.Header>
+					<Modal.Body>
+						<Container>
+							<Form>
+								<Form.Group className="mb-3" controlId="formBasicUsername">
+									<Form.Label>Email</Form.Label>
+									<Form.Control
+										onChange={handleChange}
+										name="email"
+										value={data.email}
+										type="text"
+										placeholder="Enter username"
+									/>
+									<Form.Text className="text-muted">
+										We'll never share your email with anyone else.
+									</Form.Text>
+								</Form.Group>
+
+								<Form.Group className="mb-3" controlId="formBasicUsername">
+									<Form.Label>Username</Form.Label>
+									<Form.Control
+										onChange={handleChange}
+										name="username"
+										value={data.username}
+										type="text"
+										placeholder="Enter username"
+									/>
+								</Form.Group>
+
+								<Form.Group className="mb-3" controlId="formBasicPassword">
+									<Form.Label>Password</Form.Label>
+									<Form.Control
+										onChange={handleChange}
+										name="password"
+										value={data.password}
+										type="password"
+										placeholder="Password"
+									/>
+								</Form.Group>
+							</Form>
+						</Container>
+					</Modal.Body>
+					<Modal.Footer>
+						<Button variant="link" onClick={goToSignIn}>
+							Sign in
+						</Button>
+						<Button variant="success" onClick={handleSignUp}>
+							Sign up
+						</Button>
+					</Modal.Footer>
+				</Modal>
+			) : (
+				<Modal show={show} onHide={handleClose}>
+					<Modal.Header closeButton>
+						<Modal.Title>SIGN IN</Modal.Title>
+					</Modal.Header>
+					<Modal.Body>
+						<Container>
+							<Form>
+								<Form.Group className="mb-3" controlId="formBasicUsername">
+									<Form.Label>Username</Form.Label>
+									<Form.Control
+										onChange={handleChange}
+										name="username"
+										value={data.username}
+										type="text"
+										placeholder="Enter username"
+									/>
+								</Form.Group>
+
+								<Form.Group className="mb-3" controlId="formBasicPassword">
+									<Form.Label>Password</Form.Label>
+									<Form.Control
+										onChange={handleChange}
+										name="password"
+										value={data.password}
+										type="password"
+										placeholder="Password"
+									/>
+								</Form.Group>
+							</Form>
+						</Container>
+					</Modal.Body>
+					<Modal.Footer>
+						<Button variant="link dark" onClick={goToSignUp}>
+							Create New Account
+						</Button>
+						<Button variant="success" onClick={handleSignIn}>
+							Sign in
+						</Button>
+					</Modal.Footer>
+				</Modal>
+			)}
+		</div>
+	);
+}
+
+export default observer(Sign);
