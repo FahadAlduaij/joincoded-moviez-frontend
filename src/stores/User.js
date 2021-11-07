@@ -1,6 +1,6 @@
 import decode from "jwt-decode";
 import { makeObservable, observable, makeObservable, action } from "mobx";
-import instance from "./instance";
+import instance from "../api/instance";
 
 class UserData {
 	user = null;
@@ -39,7 +39,7 @@ class UserData {
 
 	signIn = async (userInfo) => {
 		try {
-			const res = instance.post("/signin", userInfo);
+			const res = instance.post("/user/signin", userInfo);
 			this.setUser(res.data.token);
 			this.signed = true;
 		} catch (error) {
@@ -49,7 +49,7 @@ class UserData {
 
 	signUp = async (userInfo) => {
 		try {
-			const res = instance.post("/signup", userInfo);
+			const res = instance.post("/user/signup", userInfo);
 			this.setUser(res.data.token);
 		} catch (error) {
 			console.log(error);
