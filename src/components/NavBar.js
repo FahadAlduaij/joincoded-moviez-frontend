@@ -19,9 +19,19 @@ function NavBar() {
 							/>
 						</Navbar.Brand>
 					</Link>
+					<Link to="/">
+						<Navbar.Brand>
+							Home
+						</Navbar.Brand>
+					</Link>
+					<Link to="/movies">
+						<Navbar.Brand>
+							Movies
+						</Navbar.Brand>
+					</Link>
+					
+					<Sign />
 				</Container>
-
-				<Sign />
 			</Navbar>
 		</>
 	);

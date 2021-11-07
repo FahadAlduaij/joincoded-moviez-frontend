@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button, Container, Modal } from "react-bootstrap";
+import { Form, Button, Container, Modal, Dropdown } from "react-bootstrap";
 import { useState } from "react";
 import userData from "../stores/User";
 import { observer } from "mobx-react-lite";
@@ -33,6 +33,7 @@ function Sign() {
 
 	const goToSignUp = (event) => {
 		event.preventDefault();
+		setShow(true);
 		setShowCreateNewUser(true);
 	};
 	const goToSignIn = (event) => {
@@ -57,9 +58,20 @@ function Sign() {
 					Logout
 				</Button>
 			) : (
-				<Button variant="secondary" onClick={handleShow}>
-					Sign in
-				</Button>
+				<Dropdown>
+					<Dropdown.Toggle variant="dark" id="dropdown-basic">
+						Dropdown Button
+					</Dropdown.Toggle>
+
+					<Dropdown.Menu>
+						<Dropdown.Item onClick={handleShow} href="#/action-3">
+							Sign in
+						</Dropdown.Item>
+						<Dropdown.Item onClick={goToSignUp} href="#/action-3">
+							Sign Up
+						</Dropdown.Item>
+					</Dropdown.Menu>
+				</Dropdown>
 			)}
 
 			{showCreateNewUser ? (
