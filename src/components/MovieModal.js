@@ -129,7 +129,7 @@ function MovieModal() {
 						/>
 					</span>
 				</Form.Group>
-//Previous Form input for single, this below works
+{/* Previous Form input for single, this below works */}
                {/* <Form.Group className="mb-3" controlId="formBasicPassword">
                  <Form.Label>Genres</Form.Label>
                  <Form.Control
