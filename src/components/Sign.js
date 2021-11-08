@@ -24,6 +24,7 @@ function Sign() {
     setData({ ...data, [event.target.name]: event.target.value });
   };
 
+
   const handleSignIn = (event) => {
     event.preventDefault();
     userData.signIn(data);
@@ -46,10 +47,36 @@ function Sign() {
     userData.signUp(data);
   };
 
+	const goToSignUp = (event) => {
+		event.preventDefault();
+		setShow(true);
+		setShowCreateNewUser(true);
+	};
+	const goToSignIn = (event) => {
+		event.preventDefault();
+		setShowCreateNewUser(false);
+	};
+
+	const handleSignIn = (event) => {
+		event.preventDefault();
+		userData.signIn(data);
+		setShowCreateNewUser(false);
+		handleClose();
+	};
+
+	const handleSignUp = (event) => {
+		event.preventDefault();
+		userData.signUp(data);
+		setShowCreateNewUser(false);
+		handleClose();
+	};
+
+
   const handleSignOut = (event) => {
     event.preventDefault();
     userData.signOut();
   };
+
 
   return (
     <div>
@@ -67,6 +94,19 @@ function Sign() {
           <Dropdown.Toggle variant="dark" id="dropdown-basic">
             Sign in
           </Dropdown.Toggle>
+
+	return (
+		<div>
+			{userData.signed === true ? (
+				<Button variant="danger" onClick={handleSignOut}>
+					Logout
+				</Button>
+			) : (
+				<Dropdown>
+					<Dropdown.Toggle variant="dark" id="dropdown-basic">
+						Sign in
+					</Dropdown.Toggle>
+
 
           <Dropdown.Menu>
             <Dropdown.Item onClick={handleShow} href="#/action-3">
