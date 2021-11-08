@@ -1,20 +1,24 @@
 import React from "react";
 
 function SearchBar({ item, setItem }) {
-	return (
-		<div>
-			<div className="position-relative">
-				<div className="position-absolute top-20 end-0 m-2 w-25 form-control ">
-					<input
-						className=" position-static w-100  "
-						type="search"
-						onChange={(e) => setItem(e.target.value)}
-						placeholder="Search for a Movie!"
-					/>
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <div>
+      <div className="wrap position-relative ">
+        <div className="search">
+          <img
+            className="searchimg"
+            src="http://www.clker.com/cliparts/R/6/l/K/8/R/search-icon-red-md.png"
+          />
+          <input
+            className=" searchTerm  "
+            type="search"
+            onChange={(e) => setItem(e.target.value)}
+            placeholder="Search for a Movie!"
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default SearchBar;
