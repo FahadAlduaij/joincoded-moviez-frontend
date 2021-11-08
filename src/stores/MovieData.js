@@ -1,5 +1,6 @@
 import { makeAutoObservable } from "mobx";
 import instance from "../api/instance";
+import userData from "./User";
 
 class MovieData {
 	constructor() {
