@@ -9,6 +9,7 @@ import GenreOptionsMovieCreate from "./GenreOptionsMovieCreate"
 
 
 function MovieModal() {
+//Changed genres from '' to []
 	const [movie, setMovie] = useState({
 		title: "",
 		image: "",
@@ -16,7 +17,7 @@ function MovieModal() {
 		genres: [],
 		celebrities: "",
 	});
-
+  
 	const [genresSelected, setGenresSelect] = useState({
 		optionSelected: null
 	})
@@ -56,46 +57,53 @@ function MovieModal() {
 		handleClose();
 	};
 
-	return (
-		<div>
-			<Button variant="success" onClick={handleShow}>
-				Create New Movie
-			</Button>
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     movieData.createMovie(movie);
+//     handleClose();
+//   };
 
-			<Modal show={show} onHide={handleClose}>
-				<Modal.Header closeButton>
-					<Modal.Title>Create Movie</Modal.Title>
-				</Modal.Header>
+  return (
+    <div>
+      <button className="createbtn" variant="success" onClick={handleShow}>
+        Create New Movie
+      </button>
 
-				<Modal.Body>
-					<Container>
-						<Form>
-							<Form.Group className="mb-3" controlId="formBasicUsername">
-								<Form.Label>Title</Form.Label>
-								<Form.Control
-									onChange={handleChange}
-									name="title"
-									value={movie.title}
-									type="text"
-									placeholder="Enter title"
-								/>
-							</Form.Group>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Create Movie</Modal.Title>
+        </Modal.Header>
 
-							<Form.Group className="mb-3" controlId="formBasicUsername">
-								<Form.Label>Image</Form.Label>
-								<Form.Control onChange={handleImage} name="image" type="file" />
-							</Form.Group>
+        <Modal.Body>
+          <Container>
+            <Form>
+              <Form.Group className="mb-3" controlId="formBasicUsername">
+                <Form.Label>Title</Form.Label>
+                <Form.Control
+                  onChange={handleChange}
+                  name="title"
+                  value={movie.title}
+                  type="text"
+                  placeholder="Enter title"
+                />
+              </Form.Group>
 
-							<Form.Group className="mb-3" controlId="formBasicPassword">
-								<Form.Label>Release Date</Form.Label>
-								<Form.Control
-									onChange={handleChange}
-									name="releaseDate"
-									value={movie.releaseDate}
-									type="text"
-									placeholder="Enter release date"
-								/>
-							</Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicUsername">
+                <Form.Label>Image</Form.Label>
+                <Form.Control onChange={handleImage} name="image" type="file" />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Release Date</Form.Label>
+                <Form.Control
+                  onChange={handleChange}
+                  name="releaseDate"
+                  value={movie.releaseDate}
+                  type="text"
+                  placeholder="Enter release date"
+                />
+              </Form.Group>
+
 
 							<Form.Group className="mb-3" controlId="formBasicPassword">
 								<Form.Label>Genres</Form.Label>
@@ -121,28 +129,40 @@ function MovieModal() {
 									/>
 								</span>
 							</Form.Group>
+//Previous Form input for single, this below works
+//               <Form.Group className="mb-3" controlId="formBasicPassword">
+//                 <Form.Label>Genres</Form.Label>
+//                 <Form.Control
+//                   onChange={handleChange}
+//                   name="genres"
+//                   value={movie.genres}
+//                   type="text"
+//                   placeholder="Enter genre"
+//                 />
+//               </Form.Group>
 
-							<Form.Group className="mb-3" controlId="formBasicPassword">
-								<Form.Label>Celebrities</Form.Label>
-								<Form.Control
-									onChange={handleChange}
-									name="celebrities"
-									value={movie.celebrities}
-									type="text"
-									placeholder="Enter celebrities"
-								/>
-							</Form.Group>
-						</Form>
-					</Container>
-				</Modal.Body>
-				<Modal.Footer>
-					<Button variant="success" onClick={handleSubmit}>
-						Create
-					</Button>
-				</Modal.Footer>
-			</Modal>
-		</div>
-	);
+
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Celebrities</Form.Label>
+                <Form.Control
+                  onChange={handleChange}
+                  name="celebrities"
+                  value={movie.celebrities}
+                  type="text"
+                  placeholder="Enter celebrities"
+                />
+              </Form.Group>
+            </Form>
+          </Container>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="success" onClick={handleSubmit}>
+            Create
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </div>
+  );
 }
 
 export default observer(MovieModal);

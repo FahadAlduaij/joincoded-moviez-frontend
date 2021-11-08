@@ -31,7 +31,7 @@ body {
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ff0000;
 }
 
 @keyframes App-logo-spin {
@@ -44,6 +44,7 @@ body {
 }
 
 .list {
+  position: fixed;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -68,4 +69,77 @@ body {
   display: flex !important;
   justify-content: space-around;
   flex-direction: row !important;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  background: #f2f2f2;
+  font-family: "Open Sans", sans-serif;
+}
+
+.search {
+  width: 75%;
+  position: relative;
+  display: flex;
+  margin-top: 5%;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 2px solid #ff0000;
+  padding: 16px;
+  height: 20px;
+  border-radius: 0px 0px 50px 0px;
+  outline: none;
+  color: #363636;
+}
+
+.searchTerm:focus {
+  color: #363636;
+}
+
+.wrap {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.searchimg {
+  width: 40px;
+  height: 36px;
+  text-align: center;
+  border-radius: 5px 0px 0px 5px;
+  font-size: 20px;
+}
+
+.logoutbtn {
+  width: 69%;
+  position: relative;
+  display: run-in;
+  font-family: "Open Sans", sans-serif;
+  border: 2px solid #ff0000;
+  padding: 0px;
+  border-radius: 0px 0px 20px 5px;
+  color: #ff0000;
+  text-align: center;
+}
+
+.createbtn {
+  position: absolute;
+  display: run-in;
+  background: #ffffff;
+  width: 190px;
+  margin-top: -18px;
+  margin-left: 138px;
+  font-family: "Open Sans", sans-serif;
+  border: 2px solid #ff0000;
+  padding: 1px;
+  border-radius: 0px 0px 0px 50px;
+  color: #ff0000;
+  text-align: center;
+  height: 36px;
+  font-size: 17px;
 }
