@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Tag({ genre }) {
+function Tag({ item }) {
+
 	return (
 		<div>
 			<Link to="/">
-				<p variant="link">{genre.genreName} </p>
+				<p variant="link">{item} </p>
 			</Link>
 		</div>
 	);
