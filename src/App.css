@@ -44,6 +44,7 @@ body {
 }
 
 .list {
+  position: fixed;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
@@ -81,6 +82,7 @@ body {
   width: 75%;
   position: relative;
   display: flex;
+  margin-top: 5%;
 }
 
 .searchTerm {
@@ -90,11 +92,11 @@ body {
   height: 20px;
   border-radius: 0px 0px 50px 0px;
   outline: none;
-  color: #ff0000;
+  color: #363636;
 }
 
 .searchTerm:focus {
-  color: #cc0000;
+  color: #363636;
 }
 
 .wrap {
@@ -123,4 +125,21 @@ body {
   border-radius: 0px 0px 20px 5px;
   color: #ff0000;
   text-align: center;
+}
+
+.createbtn {
+  position: absolute;
+  display: run-in;
+  background: #ffffff;
+  width: 190px;
+  margin-top: -18px;
+  margin-left: 138px;
+  font-family: "Open Sans", sans-serif;
+  border: 2px solid #ff0000;
+  padding: 1px;
+  border-radius: 0px 0px 0px 50px;
+  color: #ff0000;
+  text-align: center;
+  height: 36px;
+  font-size: 17px;
 }
