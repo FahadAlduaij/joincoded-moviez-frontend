@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchBar({ item, setitem: setItem }) {
+function SearchBar({ item, setItem }) {
 	return (
 		<div>
 			<div className="position-relative">
