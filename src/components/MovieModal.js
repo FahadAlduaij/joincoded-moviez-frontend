@@ -105,41 +105,41 @@ function MovieModal() {
               </Form.Group>
 
 
-							<Form.Group className="mb-3" controlId="formBasicPassword">
-								<Form.Label>Genres</Form.Label>
-								{/* <Form.Control
-									onChange={handleChange}
-									name="genres"
-									value={movie.genres}
-									type="text"
-									placeholder="Enter genre"
-								/> */}
-								<span>
-									<ReactSelect
-									options={genreOptions}
-									isMulti
-									closeMenuOnSelect={false}
-									hideSelectedOptions={false}
-									components={{
-										GenreOptionsMovieCreate
-									}}
-									onChange={reactSelectHandleChange}
-									allowSelectAll={true}
-									value={genresSelected.optionSelected}
-									/>
-								</span>
-							</Form.Group>
+				<Form.Group className="mb-3" controlId="formBasicPassword">
+					<Form.Label>Genres</Form.Label>
+					{/* <Form.Control
+						onChange={handleChange}
+						name="genres"
+						value={movie.genres}
+						type="text"
+						placeholder="Enter genre"
+					/> */}
+					<span>
+						<ReactSelect
+						options={genreOptions}
+						isMulti
+						closeMenuOnSelect={false}
+						hideSelectedOptions={false}
+						components={{
+							GenreOptionsMovieCreate
+						}}
+						onChange={reactSelectHandleChange}
+						allowSelectAll={true}
+						value={genresSelected.optionSelected}
+						/>
+					</span>
+				</Form.Group>
 //Previous Form input for single, this below works
-//               <Form.Group className="mb-3" controlId="formBasicPassword">
-//                 <Form.Label>Genres</Form.Label>
-//                 <Form.Control
-//                   onChange={handleChange}
-//                   name="genres"
-//                   value={movie.genres}
-//                   type="text"
-//                   placeholder="Enter genre"
-//                 />
-//               </Form.Group>
+               {/* <Form.Group className="mb-3" controlId="formBasicPassword">
+                 <Form.Label>Genres</Form.Label>
+                 <Form.Control
+                   onChange={handleChange}
+                   name="genres"
+                   value={movie.genres}
+                   type="text"
+                   placeholder="Enter genre"
+                 />
+               </Form.Group> */}
 
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
