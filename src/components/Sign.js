@@ -60,7 +60,11 @@ function Sign() {
           <h5 className=" nav-item badge bg-secondary text-wrap">
             Welcome Back {userData.user.username}!
           </h5>
-          <button className="logoutbtn" onClick={handleSignOut}>
+          <button
+            className="logoutbtn"
+            variant="danger"
+            onClick={handleSignOut}
+          >
             Logout
           </button>
         </>
