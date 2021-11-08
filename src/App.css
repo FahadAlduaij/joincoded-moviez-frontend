@@ -1,3 +1,9 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-size: 400% 400%;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +41,31 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.item {
+  margin: 20px;
+  border-radius: 5px;
+  columns: auto;
+}
+
+.item img {
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.item:hover {
+  transform: scale(1.05);
+}
+
+.carditem-genrerow {
+  display: flex !important;
+  justify-content: space-around;
+  flex-direction: row !important;
 }
