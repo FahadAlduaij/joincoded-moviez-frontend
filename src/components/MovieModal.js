@@ -22,7 +22,7 @@ function MovieModal() {
 		setMovie({ ...movie, image: event.target.files[0] });
 	};
 
-	const handlesubmit = (event) => {
+	const handleSubmit = (event) => {
 		event.preventDefault();
 		movieData.createMovie(movie);
 		handleClose();
@@ -94,7 +94,7 @@ function MovieModal() {
 					</Container>
 				</Modal.Body>
 				<Modal.Footer>
-					<Button variant="success" onClick={handlesubmit}>
+					<Button variant="success" onClick={handleSubmit}>
 						Create
 					</Button>
 				</Modal.Footer>
