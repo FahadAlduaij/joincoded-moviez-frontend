@@ -4,7 +4,12 @@ import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import Tag from "./tag";
 
 function MovieCard({ movie }) {
-	const genreList = movie.genres.map((x) => <Tag key={x._id} genre={x} />);
+	const genreList = movie.genres.map((genre) => (
+		<Tag key={genre._id} item={genre.genreName} />
+	));
+	const celebritiesList = movie.celebrities.map((cel) => (
+		<Tag key={cel._id} item={cel.name} />
+	));
 
 	return (
 		<div>
@@ -24,7 +29,7 @@ function MovieCard({ movie }) {
 							<ListGroupItem>{genreList} </ListGroupItem>
 						</ListGroup>
 					</ListGroupItem>
-					<ListGroupItem>Vestibulum at eros</ListGroupItem>
+					<ListGroupItem>{celebritiesList}</ListGroupItem>
 				</ListGroup>
 				<Card.Body>
 					<Card.Link href="#">Card Link</Card.Link>

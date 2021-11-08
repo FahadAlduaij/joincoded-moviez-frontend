@@ -24,13 +24,6 @@ function Sign() {
 		setData({ ...data, [event.target.name]: event.target.value });
 	};
 
-	const handleSignIn = (event) => {
-		event.preventDefault();
-		userData.signIn(data);
-		setShowCreateNewUser(false);
-		handleClose();
-	};
-
 	const goToSignUp = (event) => {
 		event.preventDefault();
 		setShow(true);
@@ -41,9 +34,18 @@ function Sign() {
 		setShowCreateNewUser(false);
 	};
 
+	const handleSignIn = (event) => {
+		event.preventDefault();
+		userData.signIn(data);
+		setShowCreateNewUser(false);
+		handleClose();
+	};
+
 	const handleSignUp = (event) => {
 		event.preventDefault();
 		userData.signUp(data);
+		setShowCreateNewUser(false);
+		handleClose();
 	};
 
 	const handleSignOut = (event) => {
@@ -53,7 +55,7 @@ function Sign() {
 
 	return (
 		<div>
-			{userData.signed ? (
+			{userData.signed === true ? (
 				<Button variant="danger" onClick={handleSignOut}>
 					Logout
 				</Button>

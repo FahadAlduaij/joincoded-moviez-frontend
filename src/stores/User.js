@@ -26,7 +26,8 @@ class UserData {
 		const token = localStorage.getItem("myToken");
 		if (token) {
 			let tempUser = decode(token);
-			if (tempUser.exp > Date.now()) {
+			const time = tempUser.exp * 1000;
+			if (time > Date.now()) {
 				this.signed = true;
 				return this.setUser(token);
 			} else {
@@ -41,7 +42,6 @@ class UserData {
 			const res = await instance.post("/user/signin", userInfo);
 			this.setUser(res.data.token);
 			this.signed = true;
-			console.log(res.data.token);
 		} catch (error) {
 			console.log(error);
 		}
@@ -51,6 +51,7 @@ class UserData {
 		try {
 			const res = await instance.post("/user/signup", userInfo);
 			this.setUser(res.data.token);
+			this.signed = true;
 		} catch (error) {
 			console.log(error);
 		}

@@ -18,6 +18,23 @@ class MovieData {
 			console.log(error);
 		}
 	};
+
+	createMovie = async (movieInfo) => {
+		try {
+			if (!userData.user.admin) {
+				return console.log("You are not admin");
+			} else {
+				const formData = new FormData();
+				for (const key in movieInfo) {
+					formData.append(key, movieInfo[key]);
+				}
+				const res = await instance.post("/movies", formData);
+				this.movies.push(res.data);
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	};
 }
 
 const movieData = new MovieData();
