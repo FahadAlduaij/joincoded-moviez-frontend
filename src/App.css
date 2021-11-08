@@ -31,7 +31,7 @@ body {
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ff0000;
 }
 
 @keyframes App-logo-spin {
@@ -78,7 +78,7 @@ body {
 }
 
 .search {
-  width: 100%;
+  width: 75%;
   position: relative;
   display: flex;
 }
@@ -88,7 +88,7 @@ body {
   border: 2px solid #ff0000;
   padding: 16px;
   height: 20px;
-  border-radius: 0px 0px 50px 5px;
+  border-radius: 0px 0px 50px 0px;
   outline: none;
   color: #ff0000;
 }
@@ -111,4 +111,16 @@ body {
   text-align: center;
   border-radius: 5px 0px 0px 5px;
   font-size: 20px;
+}
+
+.logoutbtn {
+  width: 69%;
+  position: relative;
+  display: run-in;
+  font-family: "Open Sans", sans-serif;
+  border: 2px solid #ff0000;
+  padding: 0px;
+  border-radius: 0px 0px 20px 5px;
+  color: #ff0000;
+  text-align: center;
 }
