@@ -43,9 +43,12 @@ function MovieModal() {
 		});
 	};
 
+
+
 	const handleSubmit = (event) => {
 		const genreArray = []
 		genresSelected.optionSelected.forEach(element => genreArray.push(element.value))
+		//elements in genreArray not being added to movie.genres for some reason
 		console.log(genreArray)
 		setMovie({ ...movie, genres: genreArray })
 		event.preventDefault();
