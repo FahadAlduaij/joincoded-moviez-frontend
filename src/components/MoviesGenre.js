@@ -8,7 +8,7 @@ function MoviesGenre({ genre, query }) {
 
 	return (
 		<div>
-			<h1>{genre.name}</h1>
+			<h1 className="genre-header">{genre.name}</h1>
 			<div className="scrolling-wrapper row flex-row flex-nowrap pb-1 pt-2">
 				{movies}
 			</div>

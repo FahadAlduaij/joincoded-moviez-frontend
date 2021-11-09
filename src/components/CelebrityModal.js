@@ -31,8 +31,8 @@ const CelebrityModal = () => {
 
   return (
     <>
-      <button className="createbtn" variant="success" onClick={handleShow}>
-        Add Celebrity
+      <button className="adminButtons"  variant="success" onClick={handleShow}>
+        New Celebrity
       </button>
 
       <Modal show={show} onHide={handleClose}>
@@ -88,7 +88,7 @@ const CelebrityModal = () => {
           </Modal.Body>
           <Modal.Footer>
             <Button variant="success" onClick={handleSubmit}>
-              Create
+            Create New
             </Button>
           </Modal.Footer>
         </Form>

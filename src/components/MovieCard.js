@@ -5,15 +5,14 @@ import { Link } from "react-router-dom";
 
 function MovieCard({ movie }) {
 	return (
-		<div className="item col-2 m-5">
-			<Card style={{ width: "18rem" }}>
+		<div className="item h-80 col-2 m-5 movie-shadow ">
+			<Card style={{ width: "18rem" }} bg="dark" text="light" border="dark">
 				<Link to={`/movies/${movie.slug}`}>
 					<Card.Img variant="top" src={movie.image} />
+					<Card.ImgOverlay>
+						<h2 className="genre-header">{movie.title}</h2>
+					</Card.ImgOverlay>
 				</Link>
-				<Card.Body>
-					<Card.Title>{movie.title}</Card.Title>
-					<Card.Text></Card.Text>
-				</Card.Body>
 			</Card>
 		</div>
 	);

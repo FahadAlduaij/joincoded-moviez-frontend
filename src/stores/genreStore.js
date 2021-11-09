@@ -16,6 +16,15 @@ class GenreStore {
 			console.log(error);
 		}
 	};
+
+	createGenre = async (newGenre) => {
+		try {
+			const res = await instance.post("/genres", newGenre);
+			this.genres.push(res.data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 }
 
 const genreStore = new GenreStore();

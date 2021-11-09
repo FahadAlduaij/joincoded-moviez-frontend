@@ -61,9 +61,9 @@ function MovieModal() {
   };
 
   return (
-    <div>
-      <button className="createbtn" variant="success" onClick={handleShow}>
-        Create New Movie
+    <>
+      <button className="adminButtons" variant="success" onClick={handleShow}>
+        New Movie
       </button>
 
       <Modal show={show} onHide={handleClose}>
@@ -132,12 +132,12 @@ function MovieModal() {
           </Modal.Body>
           <Modal.Footer>
             <Button variant="success" onClick={handleSubmit}>
-              Create
+            Create New
             </Button>
           </Modal.Footer>
         </Form>
       </Modal>
-    </div>
+    </>
   );
 }
 

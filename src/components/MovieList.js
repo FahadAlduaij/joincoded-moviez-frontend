@@ -3,7 +3,6 @@ import { observer } from "mobx-react";
 import { useState } from "react";
 
 // Components
-import MovieModal from "./MovieModal";
 import SearchBar from "./SearchBar";
 import MoviesGenre from "./MoviesGenre";
 
@@ -20,7 +19,6 @@ function MovieList() {
 	return (
 		<div>
 			<div>
-				<MovieModal />
 				<SearchBar setItem={setQuery} />
 			</div>
 			<div className="mt-4 ">
