@@ -119,7 +119,7 @@ body {
   width: 100px;
   position: absolute;
   margin-top: 30px;
-  margin-left: 887px;
+  margin-left: 814px;
   display: run-in;
   font-family: "Open Sans", sans-serif;
   border: 2px solid #ff0000;
@@ -135,7 +135,7 @@ body {
   width: 100px;
   position: absolute;
   margin-top: 30px;
-  margin-left: 989px;
+  margin-left: 915px;
   display: run-in;
   font-family: "Open Sans", sans-serif;
   border: 2px solid #ff0000;
@@ -148,8 +148,10 @@ body {
 }
 
 .logoutbtn {
-  width: 69%;
-  position: relative;
+  width: 100px;
+  margin-top: 30px;
+  margin-left: 1016px;
+  position: absolute;
   display: run-in;
   font-family: "Open Sans", sans-serif;
   border: 2px solid #ff0000;
@@ -174,4 +176,51 @@ body {
   text-align: center;
   height: 36px;
   font-size: 17px;
+}
+
+.bdge {
+  position: absolute;
+  display: run-in;
+  margin-top: -20px;
+  margin-left: 895px;
+  font-size: 13px;
+  border-radius: 5px 5px 5px 5px;
+  color: #ffffff;
+  text-align: center;
+  border: 4px solid #777777;
+}
+
+.signinbtn {
+  width: 100px;
+  margin-top: 6px;
+  margin-left: -90px;
+  position: absolute;
+  display: run-in;
+  font-family: "Open Sans", sans-serif;
+  border: 2px solid #ff0000;
+  padding: 0px;
+  border-radius: 0px 0px 20px 5px;
+  color: #ff0000;
+  text-align: center;
+}
+
+.butn {
+  position: relative;
+  display: run-in;
+  background: #ffffff;
+  width: 100px;
+  margin-top: -18px;
+  margin-left: 138px;
+  font-family: "Open Sans", sans-serif;
+  border: 2px solid #ff0000;
+  padding: 1px;
+  border-radius: 5px 5px 5px 5px;
+  color: #ff0000;
+  text-align: center;
+}
+
+.crac {
+  background: #ffffff;
+  text-decoration: none;
+  border-style: none;
 }
