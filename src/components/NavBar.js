@@ -1,6 +1,8 @@
 import React from "react";
 import { Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
+// Components
 import Sign from "./Sign";
 
 function NavBar() {
