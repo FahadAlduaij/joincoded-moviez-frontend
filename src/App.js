@@ -8,21 +8,23 @@ import Sign from "./components/Sign";
 import HomePage from "./components/HomePage";
 import MovieList from "./components/MovieList";
 import MovieDetails from "./components/MovieDetails";
+import AdminPage from "./components/AdminPage";
 
 function App() {
-	return (
-		<div>
-			<NavBar />
-			<Container>
-				<Routes>
-					<Route path="/movies/:movieSlug" element={<MovieDetails />} />
-					<Route path="/movies" element={<MovieList />} />
-					<Route path="/signin" element={<Sign />} />
-					<Route path="/" element={<HomePage />} />
-				</Routes>
-			</Container>
-		</div>
-	);
+  return (
+    <div>
+      <NavBar />
+      <Container>
+        <Routes>
+          <Route path="/movies/:movieSlug" element={<MovieDetails />} />
+          <Route path="/movies" element={<MovieList />} />
+          <Route path="/signin" element={<Sign />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </Container>
+    </div>
+  );
 }
 
 export default App;
