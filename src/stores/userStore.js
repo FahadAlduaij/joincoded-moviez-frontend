@@ -6,6 +6,7 @@ class UserStore {
 	constructor() {
 		makeObservable(this, {
 			user: observable,
+			setUser: action,
 			signIn: action,
 			signUp: action,
 			signOut: action,
@@ -23,7 +24,7 @@ class UserStore {
 	checkForToken = () => {
 		const token = localStorage.getItem("myToken");
 		if (token) {
-			let tempUser = decode(token);
+			const tempUser = decode(token);
 			const time = tempUser.exp * 1000;
 			if (time > Date.now()) {
 				return this.setUser(token);

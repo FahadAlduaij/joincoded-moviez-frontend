@@ -3,6 +3,7 @@ import { Form, Button, Container, Modal, Dropdown } from "react-bootstrap";
 import { useState } from "react";
 import userData from "../stores/userStore";
 import { observer } from "mobx-react-lite";
+import userStore from "../stores/userStore";
 
 function Sign() {
 	const [data, setData] = useState({
@@ -48,42 +49,24 @@ function Sign() {
 		handleClose();
 	};
 
-	const handleSignOut = (event) => {
-		event.preventDefault();
-		userData.signOut();
-	};
 
 	return (
 		<div>
-			{/* This should be in it's own component */}
-			{userData.user ? (
-				<>
-					<h5 className=" nav-item badge bg-secondary text-wrap">
-						Welcome Back {userData.user.username}!
-					</h5>
-					<button
-						className="logoutbtn"
-						variant="danger"
-						onClick={handleSignOut}
-					>
-						Logout
-					</button>
-				</>
-			) : (
-				<Dropdown>
-					<Dropdown.Toggle variant="dark" id="dropdown-basic">
+		
+			<Dropdown>
+				<Dropdown.Toggle variant="dark" id="dropdown-basic">
+					Sign in
+				</Dropdown.Toggle>
+				<Dropdown.Menu>
+					<Dropdown.Item onClick={handleShow} href="#/action-3">
 						Sign in
-					</Dropdown.Toggle>
-					<Dropdown.Menu>
-						<Dropdown.Item onClick={handleShow} href="#/action-3">
-							Sign in
-						</Dropdown.Item>
-						<Dropdown.Item onClick={showSignUp} href="#/action-3">
-							Sign Up
-						</Dropdown.Item>
-					</Dropdown.Menu>
-				</Dropdown>
-			)}
+					</Dropdown.Item>
+					<Dropdown.Item onClick={showSignUp} href="#/action-3">
+						Sign Up
+					</Dropdown.Item>
+				</Dropdown.Menu>
+			</Dropdown>
+
 			{showCreateNewUser ? (
 				//  REVIEW: Those should be in their own components
 				<Modal show={show} onHide={handleClose}>

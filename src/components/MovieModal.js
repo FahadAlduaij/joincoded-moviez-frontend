@@ -72,13 +72,13 @@ function MovieModal() {
 			</button>
 
 			<Modal show={show} onHide={handleClose}>
-				<Modal.Header closeButton>
-					<Modal.Title>Create Movie</Modal.Title>
-				</Modal.Header>
+				<Form>
+					<Modal.Header closeButton>
+						<Modal.Title>Create Movie</Modal.Title>
+					</Modal.Header>
 
-				<Modal.Body>
-					<Container>
-						<Form>
+					<Modal.Body>
+						<Container>
 							<Form.Group className="mb-3" controlId="formBasicUsername">
 								<Form.Label>Title</Form.Label>
 								<Form.Control
@@ -152,14 +152,14 @@ function MovieModal() {
 									placeholder="Enter celebrities"
 								/>
 							</Form.Group>
-						</Form>
-					</Container>
-				</Modal.Body>
-				<Modal.Footer>
-					<Button variant="success" onClick={handleSubmit}>
-						Create
-					</Button>
-				</Modal.Footer>
+						</Container>
+					</Modal.Body>
+					<Modal.Footer>
+						<Button variant="success" onClick={handleSubmit}>
+							Create
+						</Button>
+					</Modal.Footer>
+				</Form>
 			</Modal>
 		</div>
 	);

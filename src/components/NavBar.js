@@ -1,9 +1,13 @@
 import React from "react";
 import { Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { observer } from "mobx-react";
 
 // Components
 import Sign from "./Sign";
+
+// Stores
+import userStore from "../stores/userStore";
 
 function NavBar() {
 	return (
@@ -27,12 +31,28 @@ function NavBar() {
 					<Link to="/movies">
 						<Navbar.Brand>Movies</Navbar.Brand>
 					</Link>
-					{/* REVIEW: The buttons condition should be here  */}
-					<Sign />
+					
+
+					{userStore.user ? (
+						<>
+							<h5 className=" nav-item badge bg-secondary text-wrap">
+								Welcome Back {userStore.user.username}!
+							</h5>
+							<button
+								className="logoutbtn"
+								variant="danger"
+								onClick={userStore.signOut}
+							>
+								Logout
+							</button>
+						</>
+					) : (
+						<Sign />
+					)}
 				</Container>
 			</Navbar>
 		</div>
 	);
 }
 
-export default NavBar;
+export default observer(NavBar);
