@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 // Components
-import Tag from "./Tag";
+import Tag from "./tag";
 
 function MovieCard({ movie }) {
   const genreList = movie.genres
