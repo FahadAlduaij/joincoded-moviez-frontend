@@ -1,7 +1,10 @@
 import React from "react";
 import { Navbar, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
 import { observer } from "mobx-react";
+import { withRouter } from "react-router-dom";
+
 
 // Components
 import Sign from "./Sign";
@@ -25,12 +28,12 @@ function NavBar() {
 							/>
 						</Navbar.Brand>
 					</Link>
-					<Link to="/">
-						<Navbar.Brand>Home</Navbar.Brand>
-					</Link>
-					<Link to="/movies">
-						<Navbar.Brand>Movies</Navbar.Brand>
-					</Link>
+          <a href="/" className="Homebtn ">
+            Home
+          </a>
+          <a href="/movies" className="Moviebtn ">
+            Movies
+          </a>
 					
 
 					{userStore.user ? (
