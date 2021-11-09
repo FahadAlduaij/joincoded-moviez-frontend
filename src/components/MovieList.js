@@ -9,6 +9,7 @@ import SearchBar from "./SearchBar";
 
 // Stores
 import movieStore from "../stores/movieStore";
+import GenreModal from "./GenreModal";
 
 function MovieList() {
 	const [query, setQuery] = useState("");
@@ -21,11 +22,24 @@ function MovieList() {
 		<div>
 			<div>
 				<MovieModal />
+				<GenreModal />
 				<SearchBar setItem={setQuery} />
 			</div>
-			<div className="container-lg row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
-				{movieList}
+			<div className="mt-4 ">
+				<h1>Action</h1>
+				<div className="scrolling-wrapper row flex-row flex-nowrap pb-1 pt-2">
+					{movieList}
+				</div>
 			</div>
+			<div className="mt-4 ">
+				<h1 className="mt-4 ">Horror</h1>
+				<div className="scrolling-wrapper row flex-row flex-nowrap pb-1 pt-2">
+					{movieList}
+				</div>
+			</div>
+			{/* <div className="container-lg row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+				{movieList}
+			</div> */}
 		</div>
 	);
 }
