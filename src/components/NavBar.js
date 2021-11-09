@@ -36,7 +36,7 @@ function NavBar() {
 
           {userStore.user ? (
             <>
-              <h5 className="  bdge bg-secondary text-wrap">
+              <h5 className=" bdge bg-secondary text-wrap">
                 Welcome Back {userStore.user.username}!
               </h5>
               <button
