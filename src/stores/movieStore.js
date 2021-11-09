@@ -20,20 +20,16 @@ class MovieStore {
 	};
 
 	createMovie = async (movieInfo) => {
-		if (!userStore.user.admin) {
-			return console.log("You are not Admin");
-		} else {
-			try {
-				const formData = new FormData();
-				for (const key in movieInfo) {
-					formData.append(key, movieInfo[key]);
-				}
-				const res = await instance.post("/movies", formData);
-				this.movies.push(res.data);
-				// REVIEW: You need to add the movie int he genre as well. We'll discuss this
-			} catch (error) {
-				console.log(error);
+		try {
+			const formData = new FormData();
+			for (const key in movieInfo) {
+				formData.append(key, movieInfo[key]);
 			}
+			const res = await instance.post("/movies", formData);
+			this.movies.push(res.data);
+			// REVIEW: You need to add the movie int he genre as well. We'll discuss this
+		} catch (error) {
+			console.log(error);
 		}
 	};
 }
