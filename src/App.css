@@ -115,6 +115,38 @@ body {
   font-size: 20px;
 }
 
+.Homebtn {
+  width: 100px;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 887px;
+  display: run-in;
+  font-family: "Open Sans", sans-serif;
+  border: 2px solid #ff0000;
+  padding: 0px;
+  border-radius: 0px 0px 5px 20px;
+  color: #ff0000;
+  text-align: center;
+  background: #f2f2f2;
+  text-decoration: none;
+}
+
+.Moviebtn {
+  width: 100px;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 989px;
+  display: run-in;
+  font-family: "Open Sans", sans-serif;
+  border: 2px solid #ff0000;
+  padding: 0px;
+  border-radius: 0px 0px 5px 5px;
+  color: #ff0000;
+  text-align: center;
+  background: #f2f2f2;
+  text-decoration: none;
+}
+
 .logoutbtn {
   width: 69%;
   position: relative;
