@@ -12,7 +12,6 @@ import movieStore from "../stores/movieStore";
 import genreStore from "../stores/genreStore";
 
 function MovieModal() {
-  //Changed genres from '' to []
   const [movie, setMovie] = useState({
     title: "",
     image: "",
@@ -50,23 +49,16 @@ function MovieModal() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const genreArray = genresSelected.optionSelected.map(
-      (element) => element.value
-    );
-    //elements in genreArray not being added to movie.genres for some reason
-    console.log(genreArray);
-    // setMovie({ ...movie, genres: genreArray });
+    let genreArray = [];
+    if (genresSelected.optionSelected) {
+      genreArray = genresSelected.optionSelected.map(
+        (element) => element.value
+      );
+    }
     const newMovie = { ...movie, genres: genreArray };
-    console.log(newMovie);
     movieStore.createMovie(newMovie);
     handleClose();
   };
-
-  //   const handleSubmit = (event) => {
-  //     event.preventDefault();
-  //     movieData.createMovie(movie);
-  //     handleClose();
-  //   };
 
   return (
     <div>
@@ -111,13 +103,6 @@ function MovieModal() {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Genres</Form.Label>
-                {/* <Form.Control
-						onChange={handleChange}
-						name="genres"
-						value={movie.genres}
-						type="text"
-						placeholder="Enter genre"
-					/> */}
                 <span>
                   <ReactSelect
                     options={genreOptions}
@@ -133,18 +118,6 @@ function MovieModal() {
                   />
                 </span>
               </Form.Group>
-              {/* Previous Form input for single, this below works */}
-              {/* <Form.Group className="mb-3" controlId="formBasicPassword">
-                 <Form.Label>Genres</Form.Label>
-                 <Form.Control
-                   onChange={handleChange}
-                   name="genres"
-                   value={movie.genres}
-                   type="text"
-                   placeholder="Enter genre"
-                 />
-               </Form.Group> */}
-
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Celebrities</Form.Label>
                 <Form.Control
