@@ -5,18 +5,18 @@ import { Navigate } from "react-router-dom";
 import userStore from "../stores/userStore";
 import CelebrityModal from "./CelebrityModal";
 const AdminPage = () => {
-  if (!userStore.user.admin) return <Navigate to="/" />;
+	if (!userStore.user || !userStore.user.admin) return <Navigate to="/" />;
 
-  return (
-    <div>
-      <div></div>
-      <div>
-        {/* <MovieModal /> */}
-        {/* <GenreModal /> */}
-        <CelebrityModal />
-      </div>
-    </div>
-  );
+	return (
+		<div>
+			<div></div>
+			<div>
+				{/* <MovieModal /> */}
+				{/* <GenreModal /> */}
+				<CelebrityModal />
+			</div>
+		</div>
+	);
 };
 
 export default observer(AdminPage);
