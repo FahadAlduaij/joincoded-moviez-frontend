@@ -16,13 +16,14 @@ function MovieList() {
 	const movieList = movieStore.movies
 		.filter((movie) => movie.title.toLowerCase().includes(query.toLowerCase()))
 		.map((movie) => <MovieCard key={movie._id} movie={movie} />);
+
 	return (
 		<div>
 			<div>
 				<MovieModal />
 				<SearchBar setItem={setQuery} />
 			</div>
-			<div className="container-lg row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+			<div className="container-lg row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
 				{movieList}
 			</div>
 		</div>

@@ -8,6 +8,7 @@ function SearchBar({ setItem }) {
 					<img
 						className="searchimg"
 						src="http://www.clker.com/cliparts/R/6/l/K/8/R/search-icon-red-md.png"
+						alt="a logo for searching"
 					/>
 					<input
 						className=" searchTerm  "

@@ -17,15 +17,17 @@ function MovieDetails() {
 	const genresList = movie.genres.map((genre) => (
 		<Tag key={genre._id} item={genre.name} />
 	));
-	const celebritiesList = movie.celebrities.map((celebrity) => celebrity.name);
+	const celebritiesList = movie.celebrities.map((celebrity) => (
+		<Tag key={celebrity._id} item={celebrity.name} />
+	));
 
 	return (
 		<div>
 			<div>
-				<img src={movie.image} />
+				<img src={movie.image} alt="showing the movie" />
 				<h1>{movie.title}</h1>
 				<p>{movie.releaseDate}</p>
-				{genresList}
+				<span>{genresList}</span>
 				{celebritiesList}
 			</div>
 		</div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button, Container, Modal, Dropdown } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 import { useState } from "react";
 import { observer } from "mobx-react-lite";
 
@@ -11,14 +11,14 @@ import SignUp from "./SignUp";
 import userData from "../stores/userStore";
 
 function Sign() {
-  const [data, setData] = useState({
-    username: "",
-    password: "",
-    email: "",
-  });
+	const [data, setData] = useState({
+		username: "",
+		password: "",
+		email: "",
+	});
 
-  const [showCreateNewUser, setShowCreateNewUser] = useState(false);
-  const [show, setShow] = useState(false);
+	const [showCreateNewUser, setShowCreateNewUser] = useState(false);
+	const [show, setShow] = useState(false);
 
 	const handleClose = () => setShow(false);
 
@@ -41,19 +41,19 @@ function Sign() {
 		setShowCreateNewUser(false);
 	};
 
-  const handleSignIn = (event) => {
-    event.preventDefault();
-    userData.signIn(data);
-    setShowCreateNewUser(false);
-    handleClose();
-  };
+	const handleSignIn = (event) => {
+		event.preventDefault();
+		userData.signIn(data);
+		setShowCreateNewUser(false);
+		handleClose();
+	};
 
-  const handleSignUp = (event) => {
-    event.preventDefault();
-    userData.signUp(data);
-    setShowCreateNewUser(false);
-    handleClose();
-  };
+	const handleSignUp = (event) => {
+		event.preventDefault();
+		userData.signUp(data);
+		setShowCreateNewUser(false);
+		handleClose();
+	};
 
 	return (
 		<div>
@@ -93,7 +93,6 @@ function Sign() {
 			)}
 		</div>
 	);
-
 }
 
 export default observer(Sign);
