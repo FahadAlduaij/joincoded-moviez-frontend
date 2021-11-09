@@ -6,6 +6,7 @@ import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import Tag from "./Tag";
 import { Link } from "react-router-dom";
 
+
 function MovieCard({ movie }) {
 	const genreList = movie.genres
 		.slice(0, 2)
