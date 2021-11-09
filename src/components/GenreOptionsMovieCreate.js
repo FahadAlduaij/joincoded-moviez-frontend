@@ -9,7 +9,7 @@ const GenreOptionsMovieCreate = (props) => {
             type="checkbox"
             checked={props.isSelected}
             onChange={() => null}
-          />{" "}
+          />
           <label>{props.label}</label>
         </components.Option>
       </div>

@@ -12,7 +12,7 @@ function App() {
 			<NavBar />
 			<Container>
 				<Routes>
-					<Route path="/user/signin" element={<Sign />} />
+					<Route path="/signin" element={<Sign />} />
 					<Route path="/movies" element={<MovieList />} />
 					<Route path="/" element={<HomePage />} />
 				</Routes>

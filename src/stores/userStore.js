@@ -2,11 +2,10 @@ import decode from "jwt-decode";
 import { action, makeObservable, observable } from "mobx";
 import instance from "../api/instance";
 
-class UserData {
+class UserStore {
 	constructor() {
 		makeObservable(this, {
 			user: observable,
-			signed: observable,
 			signIn: action,
 			signUp: action,
 			signOut: action,
@@ -14,7 +13,6 @@ class UserData {
 	}
 
 	user = null;
-	signed = false;
 
 	setUser = (token) => {
 		localStorage.setItem("myToken", token);
@@ -28,10 +26,8 @@ class UserData {
 			let tempUser = decode(token);
 			const time = tempUser.exp * 1000;
 			if (time > Date.now()) {
-				this.signed = true;
 				return this.setUser(token);
 			} else {
-				this.signed = false;
 				return this.signOut();
 			}
 		}
@@ -41,7 +37,6 @@ class UserData {
 		try {
 			const res = await instance.post("/user/signin", userInfo);
 			this.setUser(res.data.token);
-			this.signed = true;
 		} catch (error) {
 			console.log(error);
 		}
@@ -51,7 +46,6 @@ class UserData {
 		try {
 			const res = await instance.post("/user/signup", userInfo);
 			this.setUser(res.data.token);
-			this.signed = true;
 		} catch (error) {
 			console.log(error);
 		}
@@ -61,10 +55,9 @@ class UserData {
 		delete instance.defaults.headers.common.Authorization;
 		localStorage.removeItem("myToken");
 		this.user = null;
-		this.signed = false;
 	};
 }
 
-const userData = new UserData();
-userData.checkForToken();
-export default userData;
+const userStore = new UserStore();
+userStore.checkForToken();
+export default userStore;

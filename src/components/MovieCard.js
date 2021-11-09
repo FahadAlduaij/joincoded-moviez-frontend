@@ -1,7 +1,9 @@
-import { observer } from "mobx-react";
 import React from "react";
+import { observer } from "mobx-react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
-import Tag from "./tag";
+
+// Components
+import Tag from "./Tag";
 
 function MovieCard({ movie }) {
 	const genreList = movie.genres
@@ -14,10 +16,7 @@ function MovieCard({ movie }) {
 				<Card.Img variant="top" src={movie.image} />
 				<Card.Body>
 					<Card.Title>{movie.title}</Card.Title>
-					<Card.Text>
-						Some quick example text to build on the card title and make up the
-						bulk of the card's content.
-					</Card.Text>
+					<Card.Text></Card.Text>
 				</Card.Body>
 				<ListGroup className="list-group-flush">
 					<ListGroupItem>{movie.releaseDate}</ListGroupItem>
