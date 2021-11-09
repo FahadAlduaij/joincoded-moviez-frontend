@@ -27,7 +27,7 @@ function MovieModal() {
 
 	const genreOptions = [];
 	genreStore.genres.forEach((genre) => {
-		genreOptions.push({ value: genre.genreName, label: genre.genreName });
+		genreOptions.push({ value: genre.name, label: genre.name });
 	});
 
 	const [show, setShow] = useState(false);

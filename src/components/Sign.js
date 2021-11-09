@@ -49,10 +49,8 @@ function Sign() {
 		handleClose();
 	};
 
-
 	return (
 		<div>
-		
 			<Dropdown>
 				<Dropdown.Toggle variant="dark" id="dropdown-basic">
 					Sign in
@@ -66,7 +64,7 @@ function Sign() {
 					</Dropdown.Item>
 				</Dropdown.Menu>
 			</Dropdown>
-
+			
 			{showCreateNewUser ? (
 				//  REVIEW: Those should be in their own components
 				<Modal show={show} onHide={handleClose}>

@@ -3,12 +3,12 @@ import { observer } from "mobx-react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 // Components
-import Tag from "./tag";
+import Tag from "./Tag";
 
 function MovieCard({ movie }) {
   const genreList = movie.genres
     .slice(0, 2)
-    .map((genre) => <Tag key={genre._id} item={genre.genreName} />);
+    .map((genre) => <Tag key={genre._id} item={genre.name} />);
 
   return (
     <div className="item col-2 m-5">

@@ -36,7 +36,7 @@ class UserStore {
 
 	signIn = async (userInfo) => {
 		try {
-			const res = await instance.post("/user/signin", userInfo);
+			const res = await instance.post("/signin", userInfo);
 			this.setUser(res.data.token);
 		} catch (error) {
 			console.log(error);
@@ -45,7 +45,7 @@ class UserStore {
 
 	signUp = async (userInfo) => {
 		try {
-			const res = await instance.post("/user/signup", userInfo);
+			const res = await instance.post("/signup", userInfo);
 			this.setUser(res.data.token);
 		} catch (error) {
 			console.log(error);
