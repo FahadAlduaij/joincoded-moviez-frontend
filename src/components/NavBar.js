@@ -5,7 +5,7 @@ import Sign from "./Sign";
 
 function NavBar() {
 	return (
-		<>
+		<div>
 			<Navbar bg="dark" variant="dark">
 				<Container>
 					<Link to="/">
@@ -20,20 +20,16 @@ function NavBar() {
 						</Navbar.Brand>
 					</Link>
 					<Link to="/">
-						<Navbar.Brand>
-							Home
-						</Navbar.Brand>
+						<Navbar.Brand>Home</Navbar.Brand>
 					</Link>
 					<Link to="/movies">
-						<Navbar.Brand>
-							Movies
-						</Navbar.Brand>
+						<Navbar.Brand>Movies</Navbar.Brand>
 					</Link>
-					
+					{/* REVIEW: The buttons condition should be here  */}
 					<Sign />
 				</Container>
 			</Navbar>
-		</>
+		</div>
 	);
 }
 
