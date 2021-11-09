@@ -11,14 +11,17 @@ function MovieDetails() {
 	const movie = movieStore.movies.find((movie) => movie.slug === movieSlug);
 	if (!movie) return <Navigate to="/movies" />;
 
+	const genresList = movie.genres.map((genre) => genre.name);
+	const celebritiesList = movie.celebrities.map((celebrity) => celebrity.name);
+
 	return (
 		<div>
 			<div>
 				<img src={movie.image} />
 				<h1>{movie.title}</h1>
 				<p>{movie.releaseDate}</p>
-				{/* <p>{movie.genres}</p>
-                <p>{movie.celebrities}</p> */}
+				<p>{movie.genresList}</p>
+				<p>{movie.celebritiesList}</p>
 			</div>
 		</div>
 	);
