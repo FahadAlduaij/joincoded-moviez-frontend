@@ -25,7 +25,7 @@ function NavBar() {
 							/>
 						</Navbar.Brand>
 					</Link>
-					<a href="/" className="Homebtn ">
+					<a href="/admin" className="Homebtn ">
 						Home
 					</a>
 					<a href="/movies" className="Moviebtn ">
