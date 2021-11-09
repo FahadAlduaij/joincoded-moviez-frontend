@@ -1,26 +1,23 @@
 import instance from "../api/instance";
 import { makeAutoObservable } from "mobx";
 
+// REVIEW: Bad file naming. File should be called genreStore
+
 class GenreData {
+  constructor() {
+    makeAutoObservable(this);
+  }
 
-    constructor() {
-        makeAutoObservable(this);
+  genres = [];
+
+  fetchGenres = async () => {
+    try {
+      const res = await instance.get("/genres");
+      this.genres = res.data;
+    } catch (error) {
+      console.log(error);
     }
-
-
-
-    genres = [];
-
-    fetchGenres = async () => {
-        try {
-            const res = await instance.get("/genres");
-            this.genres = res.data;
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-
+  };
 }
 
 const genreData = new GenreData();

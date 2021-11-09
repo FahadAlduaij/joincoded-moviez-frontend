@@ -7,18 +7,19 @@ import HomePage from "./components/HomePage";
 import Sign from "./components/Sign";
 
 function App() {
-	return (
-		<div>
-			<NavBar />
-			<Container>
-				<Routes>
-					<Route path="/user/signin" element={<Sign />} />
-					<Route path="/movies" element={<MovieList />} />
-					<Route path="/" element={<HomePage />} />
-				</Routes>
-			</Container>
-		</div>
-	);
+  return (
+    <div>
+      <NavBar />
+      <Container>
+        <Routes>
+          {/* REVIEW: No need for `/user/signin`, `/signin` is enough */}
+          <Route path="/user/signin" element={<Sign />} />
+          <Route path="/movies" element={<MovieList />} />
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </Container>
+    </div>
+  );
 }
 
 export default App;

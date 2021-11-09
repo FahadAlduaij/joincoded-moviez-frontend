@@ -1,5 +1,6 @@
 import React from "react";
 
+// REVIEW: Remove item if you're not using it
 function SearchBar({ item, setItem }) {
   return (
     <div>

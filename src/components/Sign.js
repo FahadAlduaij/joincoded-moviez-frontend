@@ -4,6 +4,8 @@ import { useState } from "react";
 import userData from "../stores/User";
 import { observer } from "mobx-react-lite";
 
+// REVIEW: Bad component name. It can be Authentication for example
+
 function Sign() {
   const [data, setData] = useState({
     username: "",
@@ -24,11 +26,14 @@ function Sign() {
     setData({ ...data, [event.target.name]: event.target.value });
   };
 
+  // REVIEW: Bad function name. `showSignUp`
   const goToSignUp = (event) => {
     event.preventDefault();
     setShow(true);
     setShowCreateNewUser(true);
   };
+
+  // REVIEW: Bad function name. `showSignIn`
   const goToSignIn = (event) => {
     event.preventDefault();
     setShowCreateNewUser(false);
@@ -55,6 +60,7 @@ function Sign() {
 
   return (
     <div>
+      {/* This should be in it's own component */}
       {userData.signed ? (
         <>
           <h5 className=" nav-item badge bg-secondary text-wrap">
@@ -84,6 +90,7 @@ function Sign() {
         </Dropdown>
       )}
       {showCreateNewUser ? (
+        //  REVIEW: Those should be in their own components
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>SIGN UP</Modal.Title>
