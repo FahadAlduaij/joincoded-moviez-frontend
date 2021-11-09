@@ -126,10 +126,10 @@ body {
 	margin-left: 814px;
 	display: run-in;
 	font-family: "Open Sans", sans-serif;
-	border: 2px solid #ff0000;
+	border: 2px solid #ce0202;
 	padding: 0px;
 	border-radius: 0px 0px 5px 20px;
-	color: #ff0000;
+	color: #ce0202;
 	text-align: center;
 	background: #f2f2f2;
 	text-decoration: none;
@@ -142,10 +142,10 @@ body {
 	margin-left: 915px;
 	display: run-in;
 	font-family: "Open Sans", sans-serif;
-	border: 2px solid #ff0000;
+	border: 2px solid #ce0202;
 	padding: 0px;
 	border-radius: 0px 0px 5px 5px;
-	color: #ff0000;
+	color: #ce0202;
 	text-align: center;
 	background: #f2f2f2;
 	text-decoration: none;
@@ -158,10 +158,10 @@ body {
 	position: absolute;
 	display: run-in;
 	font-family: "Open Sans", sans-serif;
-	border: 2px solid #ff0000;
+	border: 2px solid #ce0202;
 	padding: 0px;
 	border-radius: 0px 0px 20px 5px;
-	color: #ff0000;
+	color: #ce0202;
 	text-align: center;
 }
 
@@ -173,10 +173,10 @@ body {
 	margin-top: -18px;
 	margin-left: 138px;
 	font-family: "Open Sans", sans-serif;
-	border: 2px solid #ff0000;
+	border: 2px solid #ce0202;
 	padding: 1px;
 	border-radius: 0px 0px 0px 50px;
-	color: #ff0000;
+	color: #ce0202;
 	text-align: center;
 	height: 36px;
 	font-size: 17px;
@@ -201,10 +201,10 @@ body {
 	position: absolute;
 	display: run-in;
 	font-family: "Open Sans", sans-serif;
-	border: 2px solid #ff0000;
+	border: 2px solid #ce0202;
 	padding: 0px;
 	border-radius: 0px 0px 20px 5px;
-	color: #ff0000;
+	color: #ce0202;
 	text-align: center;
 }
 
@@ -216,10 +216,10 @@ body {
 	margin-top: -18px;
 	margin-left: 138px;
 	font-family: "Open Sans", sans-serif;
-	border: 2px solid #ff0000;
+	border: 2px solid #ce0202;
 	padding: 1px;
 	border-radius: 5px 5px 5px 5px;
-	color: #ff0000;
+	color: #ce0202;
 	text-align: center;
 }
 
@@ -248,13 +248,18 @@ body {
 	font-family: "Open Sans", sans-serif;
 	font-size: 2rem;
 	font-weight: 500;
-	border: 2px solid #ff0000;
+	border: 2px solid #ce0202;
 	padding: 0px;
-	border-radius: 0px 0px 5px 5px;
-	color: #ff0000;
+	border-radius: 100px;
+	color: #ce0202;
 	text-align: center;
 	background: #f2f2f2;
 	text-decoration: none;
+
+}
+
+.adminButtons:hover {
+	background: #dadada;
 }
 
 .genre-header {
