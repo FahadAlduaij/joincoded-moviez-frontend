@@ -26,6 +26,14 @@ class MovieStore {
       }
       const res = await instance.post("/movies", formData);
       this.movies.push(res.data);
+      //This below is a draft for testing later!!!!!!!!! We might make one store for all data!
+      // res.data.genres.forEach((genreInMovie) => {
+      //   const updateGenre = genreStore.genres.filter(
+      //     (genre) => genre._id === genreInMovie._id
+      //   );
+      //   updateGenre.push(res.data);
+      //   console.log(updateGenre);
+      // });
       // REVIEW: You need to add the movie int he genre as well. We'll discuss this
     } catch (error) {
       console.log(error);

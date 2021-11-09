@@ -16,8 +16,21 @@ class CelebrityStore {
       console.log(error);
     }
   };
+
+  createCelebrity = async (celebInfo) => {
+    try {
+      const formData = new FormData();
+      for (const key in celebInfo) {
+        formData.append(key, celebInfo[key]);
+      }
+      const res = await instance.post("/celebrities", formData);
+      this.celebrities.push(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 }
 
 const celebrityStore = new CelebrityStore();
-celebrityStore.fetchGenres();
+celebrityStore.fetchCelebrities();
 export default celebrityStore;
