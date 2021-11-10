@@ -19,6 +19,7 @@ function MovieModal() {
     title: "",
     image: "",
     releaseDate: "",
+    description: "",
     genres: [],
     celebrities: [],
   });
@@ -158,6 +159,17 @@ function MovieModal() {
                   value={movie.releaseDate}
                   type="text"
                   placeholder="Enter release date"
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasicUsername">
+                <Form.Label>Description</Form.Label>
+                <Form.Control
+                  onChange={handleChange}
+                  name="description"
+                  value={movie.description}
+                  type="text"
+                  placeholder="Enter description"
                 />
               </Form.Group>
 

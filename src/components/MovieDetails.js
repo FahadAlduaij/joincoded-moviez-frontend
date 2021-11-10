@@ -30,7 +30,7 @@ function MovieDetails() {
         <img className="imged" src={movie.image} alt="showing the movie" />
         <h1 className="titled">{movie.title}</h1>
         <p className="rdd">{movie.releaseDate}</p>
-        <p>{movie.description}</p>
+        <p className="descrd">{movie.description}</p>
         <span className="genbtn">{genresList}</span>
         {celebritiesList}
       </div>

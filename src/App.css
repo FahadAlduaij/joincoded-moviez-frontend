@@ -804,3 +804,11 @@ nav {
   margin-top: 300px;
   margin-left: 300px;
 }
+
+.descrd {
+  display: block;
+  padding: 25px;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  margin-left: 370px;
+}
