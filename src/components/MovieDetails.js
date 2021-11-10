@@ -36,6 +36,8 @@ function MovieDetails() {
 		<div>
 			<div>
 				<img className="imged" src={movie.image} alt="showing the movie" />
+			</div>
+			<div>
 				<h1 className="titled">{movie.title}</h1>
 				<p className="rdd">{movie.releaseDate}</p>
 				<p className="descrd">{movie.description}</p>

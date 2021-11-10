@@ -1,6 +1,11 @@
 body {
 	width: 100vw;
 	height: 100vh;
+	background-image: url("https://images.unsplash.com/photo-1603366615917-1fa6dad5c4fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: "Open Sans", sans-serif;
 }
 
 .list {
@@ -29,17 +34,6 @@ body {
 	display: flex !important;
 	justify-content: space-around;
 	flex-direction: row !important;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-body {
-	background-image: url("https://images.unsplash.com/photo-1603366615917-1fa6dad5c4fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1740&q=80");
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-size: cover;
-
-	font-family: "Open Sans", sans-serif;
 }
 
 .search {

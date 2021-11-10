@@ -22,7 +22,6 @@ function App() {
 					<Route path="/genres/:genreSlug" element={<GenreDetails />} />
 					<Route path="celebrities/:celebSlug" element={<CelebrityDetail />} />
 					<Route path="/movies" element={<MovieList />} />
-					<Route path="/signin" element={<Sign />} />
 					<Route path="/admin" element={<AdminPage />} />
 					<Route path="/" element={<HomePage />} />
 				</Routes>
