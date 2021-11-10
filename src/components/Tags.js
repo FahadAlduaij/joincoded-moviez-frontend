@@ -5,7 +5,8 @@ function Tags({ item, slug, baseUrl }) {
   return (
     <div>
       <Link to={`/${baseUrl}/${slug}`}>
-        <p variant="link">{item} </p>
+        <p>{item} </p>
+
       </Link>
     </div>
   );
