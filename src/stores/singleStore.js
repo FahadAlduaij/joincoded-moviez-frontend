@@ -72,9 +72,9 @@ class SingleStore {
 			//   updateGenre.push(res.data);
 			//   console.log(updateGenre);
 			// });
-      toast.success("Created a Movie Successfully");
+			toast.success("Created a Movie Successfully");
 		} catch (error) {
-      toast.warn("Something went wrong!");
+			toast.warn("Something went wrong!");
 			console.log(error);
 		}
 	};
@@ -92,15 +92,11 @@ class SingleStore {
 
 	createCelebrity = async (celebInfo) => {
 		try {
-			const formData = new FormData();
-			for (const key in celebInfo) {
-				formData.append(key, celebInfo[key]);
-			}
-			const res = await instance.post("/celebrities", formData);
+			const res = await instance.post("/celebrities", celebInfo);
 			this.celebrities.push(res.data);
-      toast.success("Created a Celebrity Successfully");
+			toast.success("Created a Celebrity Successfully");
 		} catch (error) {
-      toast.warn("Something went wrong!");
+			toast.warn("Something went wrong!");
 			console.log(error);
 		}
 	};
