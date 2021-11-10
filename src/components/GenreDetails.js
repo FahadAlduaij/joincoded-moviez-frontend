@@ -24,13 +24,10 @@ function GenreDetails() {
 		.map((_movie) => <MovieCard key={_movie._id} movie={_movie} />);
 
 	return (
-		<div className="genre-details-container">
+		<div className="container  mt-5">
 			<SearchBar className="searchBar-movie-list" setItem={setQuery} />
-
-			<h1>{genre.name}</h1>
-			<div className="genre-details-header scrolling-wrapper row flex-column flex-nowrap pb-1 pt-2">
-				{movieList}
-			</div>
+			<h1 className="genre-header d-block p-4 ms-2">{genre.name}</h1>
+			<div className="d-flex flex-row flex-wrap ">{movieList}</div>
 		</div>
 	);
 }
