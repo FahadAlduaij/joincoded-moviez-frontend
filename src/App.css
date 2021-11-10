@@ -818,6 +818,13 @@ nav {
   margin-left: 300px;
 }
 
+.descrd {
+  display: block;
+  padding: 25px;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  margin-left: 370px;
+}
 .genre-details-container {
 	margin-top: 100px;
 	display: flex;
