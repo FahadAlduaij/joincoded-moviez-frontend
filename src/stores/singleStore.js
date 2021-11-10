@@ -42,11 +42,11 @@ class SingleStore {
 	// Create
 	createMovie = async (movieInfo) => {
 		try {
-			const formData = new FormData();
-			for (const key in movieInfo) {
-				formData.append(key, movieInfo[key]);
-			}
-			const res = await instance.post("/movies", formData);
+			// const formData = new FormData();
+			// for (const key in movieInfo) {
+			// 	formData.append(key, movieInfo[key]);
+			// }
+			const res = await instance.post("/movies", movieInfo);
 			this.movies.push(res.data);
 
 			// y
