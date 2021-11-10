@@ -8,12 +8,13 @@ import genreStore from "../stores/genreStore";
 function GenreDetails() {
 	const { genreSlug } = useParams();
 	const genre = genreStore.genres.find((genre) => genre.slug === genreSlug);
-    if (!genre) return <Navigate to="/movies/:movieSlug" />;
+	if (!genre) return <Navigate to="/movies/:movieSlug" />;
 
-  
-	return <div>
-        <h1>Genre List</h1>
-    </div>;
+	return (
+		<div className="genre-details">
+			<h1>{genre.name}</h1>
+		</div>
+	);
 }
 
 export default GenreDetails;
