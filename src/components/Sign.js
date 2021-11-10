@@ -57,19 +57,20 @@ function Sign() {
 
 	return (
 		<div>
-			<Dropdown>
-				<Dropdown.Toggle  variant="dark" id="dropdown-basic">
-					Sign in
-				</Dropdown.Toggle>
+			<button className="sigin-up-btn" onClick={showSignUp}>
+				Sign Up
+			</button>
+			{/* <Dropdown>
+				<Dropdown.Toggle id="dropdown-basic">Sign in</Dropdown.Toggle>
 				<Dropdown.Menu>
-					<Dropdown.Item onClick={handleShow} href="#/action-3">
-						Sign in
-					</Dropdown.Item>
-					<Dropdown.Item onClick={showSignUp} href="#/action-3">
-						Sign Up
-					</Dropdown.Item>
+				<Dropdown.Item onClick={handleShow} href="#/action-3">
+				Sign in
+				</Dropdown.Item>
+				<Dropdown.Item onClick={showSignUp} href="#/action-3">
+				Sign Up
+				</Dropdown.Item>
 				</Dropdown.Menu>
-			</Dropdown>
+			</Dropdown> */}
 			{showCreateNewUser ? (
 				<SignUp
 					show={show}

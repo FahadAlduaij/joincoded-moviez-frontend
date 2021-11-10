@@ -19,7 +19,7 @@ function MovieList() {
 	return (
 		<div>
 			<div>
-				<SearchBar setItem={setQuery} />
+				<SearchBar className={"searchBar-movie-list"} setItem={setQuery} />
 			</div>
 			<div className="mt-4 ">
 				<div>{movieList}</div>

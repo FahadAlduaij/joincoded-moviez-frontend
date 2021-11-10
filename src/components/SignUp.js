@@ -1,6 +1,5 @@
 import React from "react";
-import { Form, Button, Container, Modal } from "react-bootstrap";
-
+import { Form, Button, Container, Modal, CloseButton } from "react-bootstrap";
 
 function SignUp({
 	show,
@@ -11,11 +10,11 @@ function SignUp({
 	handleSignUp,
 }) {
 	return (
-		<Modal show={show} onHide={handleClose}>
-			<Modal.Header closeButton>
+		<Modal animation autoFocus show={show} onHide={handleClose}>
+			<Modal.Header closeButton >
 				<Modal.Title>SIGN UP</Modal.Title>
 			</Modal.Header>
-			<Modal.Body>
+			<Modal.Body >
 				<Container>
 					<Form>
 						<Form.Group className="mb-3" controlId="formBasicUsername">
@@ -58,11 +57,11 @@ function SignUp({
 			</Modal.Body>
 			<Modal.Footer>
 				<Button variant="link" onClick={showSignIn}>
-					Sign in
+					Sign In
 				</Button>
-				<Button variant="success" onClick={handleSignUp}>
-					Sign up
-				</Button>
+				<button className="sigin-up-btn" onClick={handleSignUp}>
+					Sign Up
+				</button>
 			</Modal.Footer>
 		</Modal>
 	);

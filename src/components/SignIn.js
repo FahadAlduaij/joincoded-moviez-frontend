@@ -11,7 +11,7 @@ function SignIn({
 }) {
 	return (
 		<Modal show={show} onHide={handleClose}>
-			<Modal.Header closeButton>
+			<Modal.Header  closeButton  >
 				<Modal.Title>SIGN IN</Modal.Title>
 			</Modal.Header>
 			<Modal.Body>
@@ -45,9 +45,9 @@ function SignIn({
 				<Button variant="link dark" onClick={showSignUp}>
 					Create New Account
 				</Button>
-				<Button variant="success" onClick={handleSignIn}>
-					Sign in
-				</Button>
+				<button className="sigin-up-btn" onClick={handleSignIn}>
+					Sign In
+				</button>
 			</Modal.Footer>
 		</Modal>
 	);

@@ -12,7 +12,6 @@ class MovieStore {
     try {
       const res = await instance.get("/movies");
       this.movies = res.data;
-      console.log(res.data);
     } catch (error) {
       console.log(error);
     }

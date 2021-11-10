@@ -87,9 +87,9 @@ const CelebrityModal = () => {
             </Container>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="success" onClick={handleSubmit}>
+            <button className="sigin-up-btn" onClick={handleSubmit}>
             Create New
-            </Button>
+            </button>
           </Modal.Footer>
         </Form>
       </Modal>

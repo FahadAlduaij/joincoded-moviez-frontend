@@ -94,7 +94,7 @@ function MovieModal() {
 
 			<Modal show={show} onHide={handleClose}>
 				<Form>
-					<Modal.Header closeButton>
+					<Modal.Header closeButton >
 						<Modal.Title>Create Movie</Modal.Title>
 					</Modal.Header>
 
@@ -165,9 +165,9 @@ function MovieModal() {
 						</Container>
 					</Modal.Body>
 					<Modal.Footer>
-						<Button variant="success" onClick={handleSubmit}>
+						<button className="sigin-up-btn"onClick={handleSubmit}>
 							Create New
-						</Button>
+						</button>
 					</Modal.Footer>
 				</Form>
 			</Modal>
