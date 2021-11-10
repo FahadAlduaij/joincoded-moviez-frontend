@@ -42,9 +42,9 @@ function SignIn({
 				</Container>
 			</Modal.Body>
 			<Modal.Footer>
-				<Button variant="link dark" onClick={showSignUp}>
+				<button className="sign-link" onClick={showSignUp}>
 					Create New Account
-				</Button>
+				</button>
 				<button className="sigin-up-btn" onClick={handleSignIn}>
 					Sign In
 				</button>
