@@ -5,13 +5,13 @@ import { Form, Container, Modal } from "react-bootstrap";
 const MovieCommentInput = ({ movieId }) => {
   const [userComment, setUserComment] = useState({ message: "" });
 
-  handleChange = (event) => {
+  const handleChange = (event) => {
     setUserComment({ message: event.target.value });
   };
 
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    singleStore(movieId, userComment);
+    singleStore.createCommentForMovie(movieId, userComment);
     setUserComment({ message: "" });
   };
   return (
@@ -22,7 +22,7 @@ const MovieCommentInput = ({ movieId }) => {
 
       <Modal.Body>
         <Container>
-          <Form.Group className="mb-3" controlId="formBasicTitle">
+          <Form.Group className="mb-1" controlId="formBasicTitle">
             <Form.Label>Share your Thoughts!</Form.Label>
             <Form.Control
               onChange={handleChange}
