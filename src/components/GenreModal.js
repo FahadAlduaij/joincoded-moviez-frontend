@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import { Form, Button, Container, Modal } from "react-bootstrap";
 import { observer } from "mobx-react";
 
