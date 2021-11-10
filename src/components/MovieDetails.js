@@ -15,10 +15,10 @@ function MovieDetails() {
 	if (!movie) return <Navigate to="/movies" />;
 
 	const genresList = movie.genres.map((genre) => (
-		<Tags key={genre._id} item={genre.name} />
+		<Tags key={genre._id} item={genre.name} slug={genre.slug} />
 	));
 	const celebritiesList = movie.celebrities.map((celebrity) => (
-		<Tags key={celebrity._id} item={celebrity.name} />
+		<Tags key={celebrity._id} item={celebrity.name} slug={celebrity.slug} />
 	));
 
 	return (
