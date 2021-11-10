@@ -48,7 +48,7 @@ class SingleStore {
 			const res = await instance.post("/movies", formData);
 			this.movies.push(res.data);
 
-
+			// y
 			//This below is a draft for testing later!!!!!!!!! We might make one store for all data!
 			// res.data.genres.forEach((genreInMovie) => {
 			//   const updateGenre = genreStore.genres.filter(
