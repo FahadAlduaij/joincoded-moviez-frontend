@@ -14,18 +14,17 @@ import CelebrityDetail from "./components/CelebrityDetail";
 
 function App() {
 	return (
-		<div>
+		<div className="container">
 			<NavBar />
-			<Container>
-				<Routes>
-					<Route path="/movies/:movieSlug" element={<MovieDetails />} />
-					<Route path="/genres/:genreSlug" element={<GenreDetails />} />
-					<Route path="celebrities/:celebSlug" element={<CelebrityDetail />} />
-					<Route path="/movies" element={<MovieList />} />
-					<Route path="/admin" element={<AdminPage />} />
-					<Route path="/" element={<HomePage />} />
-				</Routes>
-			</Container>
+
+			<Routes>
+				<Route path="/movies/:movieSlug" element={<MovieDetails />} />
+				<Route path="/genres/:genreSlug" element={<GenreDetails />} />
+				<Route path="celebrities/:celebSlug" element={<CelebrityDetail />} />
+				<Route path="/movies" element={<MovieList />} />
+				<Route path="/admin" element={<AdminPage />} />
+				<Route path="/" element={<HomePage />} />
+			</Routes>
 		</div>
 	);
 }

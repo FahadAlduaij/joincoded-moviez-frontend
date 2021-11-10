@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 function Tags({ item, slug, baseUrl }) {
 	return (
-		<div>
+		<div className="d-inline-flex flex-fill p-2 ">
 			<Link to={`/${baseUrl}/${slug}`}>
-				<p>{item} </p>
+				<button className="genres-and-celebrities-tags">{item} </button>
 			</Link>
 		</div>
 	);

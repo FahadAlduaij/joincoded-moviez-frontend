@@ -738,53 +738,6 @@ nav {
 	color: #868686;
 }
 
-.imged {
-	display: block;
-	border-radius: 8px;
-	width: 25%;
-	margin-top: 100px;
-	margin-left: 50px;
-}
-
-.titled {
-	display: block;
-	font-family: "Open Sans", sans-serif;
-	color: #ffffff;
-	margin-left: 30%;
-	margin-top: -35%;
-}
-.rdd {
-	display: block;
-	font-family: "Open Sans", sans-serif;
-	color: #ffffff;
-	margin-left: 394px;
-	margin-top: -10px;
-}
-
-.genbtn {
-	position: relative;
-	display: block;
-	margin-top: 21%;
-	margin-left: 185px;
-}
-
-.celebtn {
-	position: relative;
-	display: block;
-	margin-left: 420px;
-	margin-top: -70px;
-	display: block;
-	margin-top: -170px;
-	margin-left: 400px;
-}
-
-.descrd {
-	display: block;
-	padding: 25px;
-	font-family: "Open Sans", sans-serif;
-	color: #ffffff;
-	margin-left: 370px;
-}
 .genre-details-container {
 	margin-top: 100px;
 	display: flex;
@@ -810,4 +763,45 @@ nav {
 .genre-details-header {
 	margin-top: 100px;
 	border-radius: 20px;
+}
+
+/* Movie Details */
+
+.movieDetails-info {
+	height: 50%;
+	width: 20%;
+	padding: 30px;
+	color: #fff;
+	font-family: "Open Sans", sans-serif;
+}
+.movieDetails-img {
+	display: block;
+	border-radius: 8px;
+	width: 25%;
+	margin-top: 100px;
+	margin-left: 50px;
+}
+.movieDetails-info h1 {
+	font-size: 2rem;
+	margin: 50px 0 10px 0;
+}
+.movieDetails-info p {
+	font-size: 1.2rem;
+}
+
+.genres-and-celebrities-tags {
+	text-decoration: none !important;
+	color: #fff;
+	font-size: 1rem !important;
+	font-weight: bold;
+	background: none;
+	outline: none;
+	border: 1px solid #fff;
+	border-radius: 20px;
+	padding: 7px;
+	width: 150px;
+	transition: 0.3;
+}
+.genres-and-celebrities-tags:hover {
+	background-color: rgba(255, 255, 255, 0.198);
 }
