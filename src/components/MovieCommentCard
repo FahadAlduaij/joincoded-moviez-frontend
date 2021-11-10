@@ -1,0 +1,15 @@
+import React from "react";
+
+const MovieCommentCard = (props) => {
+  return (
+    <div className="">
+      <div className="">
+        <p>${props.username}</p>
+        <p>${props.dateSent}</p>
+      </div>
+      <div className="">${props.message}</div>
+    </div>
+  );
+};
+
+export default MovieCommentCard;
