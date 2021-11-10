@@ -16,10 +16,20 @@ function MovieDetails() {
   const movie = singleStore.movies.find((movie) => movie.slug === movieSlug);
 
   const genresList = movie.genres.map((genre) => (
-    <Tags key={genre._id} item={genre.name} slug={genre.slug} />
+    <Tags
+      key={genre._id}
+      item={genre.name}
+      slug={genre.slug}
+      baseUrl="genres"
+    />
   ));
   const celebritiesList = movie.celebrities.map((celebrity) => (
-    <Tags key={celebrity._id} item={celebrity.name} slug={celebrity.slug} />
+    <Tags
+      key={celebrity._id}
+      item={celebrity.name}
+      slug={celebrity.slug}
+      baseUrl="celebrities"
+    />
   ));
 
   if (!movie) return <Navigate to="/movies" />;

@@ -15,6 +15,8 @@ const AdminPage = () => {
 
   return (
     <div>
+      <h1 className="header-title">Admin</h1>
+      <p className="header-p">Do Your Job and Create New Movies...!</p>
       <div className="adminContainer">
         <MovieModal />
         <GenreModal />

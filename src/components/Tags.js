@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Tags({ item, slug }) {
+function Tags({ item, slug, baseUrl }) {
   return (
     <div>
-      <Link to={`/genres/${slug}`}>
+      <Link to={`/${baseUrl}/${slug}`}>
         <p>{item} </p>
+
       </Link>
     </div>
   );
