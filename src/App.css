@@ -800,9 +800,17 @@ nav {
 }
 
 .genbtn {
+  position: relative;
   display: block;
-  margin-top: 300px;
-  margin-left: 300px;
+  margin-top: 21%;
+  margin-left: 185px;
+}
+
+.celebtn {
+  position: relative;
+  display: block;
+  margin-left: 420px;
+  margin-top: -70px;
 }
 
 .descrd {

@@ -32,7 +32,7 @@ function MovieDetails() {
         <p className="rdd">{movie.releaseDate}</p>
         <p className="descrd">{movie.description}</p>
         <span className="genbtn">{genresList}</span>
-        {celebritiesList}
+        <span className="celebtn"> {celebritiesList} </span>
       </div>
     </div>
   );
