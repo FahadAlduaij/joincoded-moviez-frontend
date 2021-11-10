@@ -11,41 +11,39 @@ import Tags from "./Tags";
 import singleStore from "../stores/singleStore";
 
 function MovieDetails() {
-  const { movieSlug } = useParams();
-  // const movie = movieStore.movies.find((movie) => movie.slug === movieSlug);
-  const movie = singleStore.movies.find((movie) => movie.slug === movieSlug);
+	const { movieSlug } = useParams();
+	const movie = singleStore.movies.find((movie) => movie.slug === movieSlug);
+	if (!movie) return <Navigate to="/movies" />;
 
-  const genresList = movie.genres.map((genre) => (
-    <Tags
-      key={genre._id}
-      item={genre.name}
-      slug={genre.slug}
-      baseUrl="genres"
-    />
-  ));
-  const celebritiesList = movie.celebrities.map((celebrity) => (
-    <Tags
-      key={celebrity._id}
-      item={celebrity.name}
-      slug={celebrity.slug}
-      baseUrl="celebrities"
-    />
-  ));
+	const genresList = movie.genres.map((genre) => (
+		<Tags
+			key={genre._id}
+			item={genre.name}
+			slug={genre.slug}
+			baseUrl="genres"
+		/>
+	));
+	const celebritiesList = movie.celebrities.map((celebrity) => (
+		<Tags
+			key={celebrity._id}
+			item={celebrity.name}
+			slug={celebrity.slug}
+			baseUrl="celebrities"
+		/>
+	));
 
-  if (!movie) return <Navigate to="/movies" />;
-
-  return (
-    <div>
-      <div>
-        <img className="imged" src={movie.image} alt="showing the movie" />
-        <h1 className="titled">{movie.title}</h1>
-        <p className="rdd">{movie.releaseDate}</p>
-        <p className="descrd">{movie.description}</p>
-        <span className="genbtn">{genresList}</span>
-        <span className="celebtn"> {celebritiesList} </span>
-      </div>
-    </div>
-  );
+	return (
+		<div>
+			<div>
+				<img className="imged" src={movie.image} alt="showing the movie" />
+				<h1 className="titled">{movie.title}</h1>
+				<p className="rdd">{movie.releaseDate}</p>
+				<p className="descrd">{movie.description}</p>
+				<span className="genbtn">{genresList}</span>
+				<span className="celebtn"> {celebritiesList} </span>
+			</div>
+		</div>
+	);
 }
 
 export default observer(MovieDetails);

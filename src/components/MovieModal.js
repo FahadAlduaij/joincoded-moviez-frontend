@@ -102,7 +102,7 @@ function MovieModal() {
 
 					<Modal.Body>
 						<Container>
-							<Form.Group className="mb-3" controlId="formBasicUsername">
+							<Form.Group className="mb-3" controlId="formBasicTitle">
 								<Form.Label>Title</Form.Label>
 								<Form.Control
 									onChange={handleChange}
@@ -118,18 +118,18 @@ function MovieModal() {
                 <Form.Control onChange={handleImage} name="image" type="file" />
               </Form.Group> */}
 
-							<Form.Group className="mb-3" controlId="formBasicUsername">
+							<Form.Group className="mb-3" controlId="formBasicImage">
 								<Form.Label>Image</Form.Label>
 								<Form.Control
 									onChange={handleChange}
 									value={movie.image}
 									name="image"
 									type="text"
-                  placeholder="Enter Image"
+									placeholder="Enter Image"
 								/>
 							</Form.Group>
 
-							<Form.Group className="mb-3" controlId="formBasicPassword">
+							<Form.Group className="mb-3" controlId="formBasicReleaseDate">
 								<Form.Label>Release Date</Form.Label>
 								<Form.Control
 									onChange={handleChange}
@@ -140,7 +140,7 @@ function MovieModal() {
 								/>
 							</Form.Group>
 
-							<Form.Group className="mb-3" controlId="formBasicUsername">
+							<Form.Group className="mb-3" controlId="formBasicDescription">
 								<Form.Label>Description</Form.Label>
 								<Form.Control
 									onChange={handleChange}
@@ -151,7 +151,7 @@ function MovieModal() {
 								/>
 							</Form.Group>
 
-							<Form.Group className="mb-3" controlId="formBasicPassword">
+							<Form.Group className="mb-3" controlId="formBasicGenres">
 								<Form.Label>Genres</Form.Label>
 								<span>
 									<ReactSelect
@@ -169,7 +169,7 @@ function MovieModal() {
 								</span>
 							</Form.Group>
 
-							<Form.Group className="mb-3" controlId="formBasicPassword">
+							<Form.Group className="mb-3" controlId="formBasicCelebrities">
 								<Form.Label>Celebrities</Form.Label>
 								<span>
 									<ReactSelect

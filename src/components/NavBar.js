@@ -14,7 +14,7 @@ function NavBar() {
 			<nav>
 				<Link to="/">
 					<img
-						alt="its a logo image for website"
+						alt="its a logo for website"
 						src="https://cdn.discordapp.com/attachments/906929616076279850/906954671556546610/6333050220_d29fb116-496b-4625-bd30-b8305e54703f.png"
 						className="logo"
 					/>
@@ -23,17 +23,17 @@ function NavBar() {
 				<ul className="nav-links">
 					<Link to="/">
 						<li>
-							<a>Home</a>
-						</li>
-					</Link>
-					<Link to="/admin">
-						<li>
-							<a>{userStore.user && "Admin"}</a>
+							<p>Home</p>
 						</li>
 					</Link>
 					<Link to="/movies">
 						<li>
-							<a>Movies</a>
+							<p>Movies</p>
+						</li>
+					</Link>
+					<Link to="/admin">
+						<li>
+							<p>{userStore.user && "Admin"}</p>
 						</li>
 					</Link>
 					<li>

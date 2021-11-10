@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Navigate } from "react-router-dom";
-import { Route } from "react-router";
+
 
 function HomePage() {
   const handleFindMovie = () => {
@@ -11,7 +10,7 @@ function HomePage() {
   return (
     <div className="content">
       <>
-        <img src="https://cdn.discordapp.com/attachments/906929616076279850/907905214244331560/6333051817_95477b21-c589-4bda-8eb6-977f333921a8.png" />
+        <img alt="Its a Logo for Website" src="https://cdn.discordapp.com/attachments/906929616076279850/907905214244331560/6333051817_95477b21-c589-4bda-8eb6-977f333921a8.png" />
       </>
       <h1>
         The Newest Movies Rating and Reviews in <strong>Moviez</strong>

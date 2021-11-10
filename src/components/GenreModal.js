@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button, Container, Modal } from "react-bootstrap";
+import { Form, Container, Modal } from "react-bootstrap";
 import { observer } from "mobx-react";
 
 // Stores

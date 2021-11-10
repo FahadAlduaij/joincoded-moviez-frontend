@@ -9,6 +9,7 @@ import SearchBar from "./SearchBar";
 
 // Stores
 import singleStore from "../stores/singleStore";
+import { observer } from "mobx-react";
 
 function GenreDetails() {
 	const [query, setQuery] = useState("");
@@ -34,4 +35,4 @@ function GenreDetails() {
 	);
 }
 
-export default GenreDetails;
+export default observer(GenreDetails);

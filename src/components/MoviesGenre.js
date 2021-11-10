@@ -1,3 +1,4 @@
+import { observer } from "mobx-react";
 import React from "react";
 import MovieCard from "./MovieCard";
 
@@ -16,4 +17,4 @@ function MoviesGenre({ genre, query }) {
 	);
 }
 
-export default MoviesGenre;
+export default observer(MoviesGenre);

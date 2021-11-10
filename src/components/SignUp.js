@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Button, Container, Modal, CloseButton } from "react-bootstrap";
+import { Form, Container, Modal } from "react-bootstrap";
 
 function SignUp({
 	show,
