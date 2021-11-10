@@ -27,10 +27,10 @@ function MovieDetails() {
   return (
     <div>
       <div>
-        <img src={movie.image} alt="showing the movie" />
-        <h1>{movie.title}</h1>
-        <p>{movie.releaseDate}</p>
-        <span>{genresList}</span>
+        <img className="imged" src={movie.image} alt="showing the movie" />
+        <h1 className="titled">{movie.title}</h1>
+        <p className="rdd">{movie.releaseDate}</p>
+        <span className="genbtn">{genresList}</span>
         {celebritiesList}
       </div>
     </div>
