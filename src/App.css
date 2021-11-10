@@ -828,3 +828,33 @@ nav {
 .genre-header-links h1::after {
   width: 100%;
 }
+
+
+
+.comments-container {
+	color: #fff;
+}
+
+.comments-text {
+	border: 1px solid #fff;
+	background-color: rgba(49, 49, 49, 0.082);
+	padding: 30px;
+	margin-bottom: 30px;
+	border-radius: 20px;
+	width: 100%;
+}
+
+.comment-header {
+	font-weight: bold;
+	font-size: 1.2rem;
+	border-bottom: 1px solid #fff;
+	
+}
+
+.comment-text {
+	font-size: 1.2rem;
+}
+
+.comments-input {
+	width: 100%;
+}
