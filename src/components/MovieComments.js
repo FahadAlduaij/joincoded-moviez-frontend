@@ -11,12 +11,12 @@ const MovieComments = ({ movieId }) => {
   if (!movie.comments.length >= 1) return <p>Be the first to Comment</p>;
 
   const commentsList = movie.comments.map((comment) => (
-    <div key={comment._id} className="">
-      <div className="">
-        <p>{comment.username}</p>
+    <div key={comment._id} className="comments-text">
+      <div className="d-flex flex-row comment-header">
+        <p className="me-4">{comment.username}</p>
         <p>{comment.dateSent}</p>
       </div>
-      <div className="">{comment.message}</div>
+      <div className="p-2 mb-2 mt-3 comment-text">{comment.message}</div>
     </div>
   ));
 
