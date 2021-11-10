@@ -230,6 +230,19 @@ body {
 	align-items: center;
 	text-align: center;
 }
+.header-title {
+	text-align: center;
+	color: #fff;
+	font-size: 4rem;
+	font-weight: bold;
+}
+.header-p {
+	text-align: center;
+	color: #fff;
+	font-size: 1.4rem;
+	font-weight: bold;
+	margin: 10px;
+}
 .adminButtons {
 	width: 20vw;
 	height: 10vh;
@@ -774,4 +787,24 @@ nav {
 
 .sign-link:hover {
 	color: #868686;
+}
+
+.genre-details-container {
+	margin-top: 100px;
+	display: flex;
+	height: 70vh;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+}
+.genre-details-container h1 {
+	color: #fff;
+	margin-bottom: 50px;
+}
+
+.genre-details-header {
+	margin-top: 100px;
+	border-radius: 20px;
 }
