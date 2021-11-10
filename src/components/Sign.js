@@ -11,56 +11,56 @@ import SignUp from "./SignUp";
 import userData from "../stores/userStore";
 
 function Sign() {
-	const [data, setData] = useState({
-		username: "",
-		password: "",
-		email: "",
-	});
+  const [data, setData] = useState({
+    username: "",
+    password: "",
+    email: "",
+  });
 
-	const [showCreateNewUser, setShowCreateNewUser] = useState(false);
-	const [show, setShow] = useState(false);
+  const [showCreateNewUser, setShowCreateNewUser] = useState(false);
+  const [show, setShow] = useState(false);
 
-	const handleClose = () => setShow(false);
+  const handleClose = () => setShow(false);
 
-	const handleShow = () => {
-		setShow(true);
-		setShowCreateNewUser(false);
-	};
+  const handleShow = () => {
+    setShow(true);
+    setShowCreateNewUser(false);
+  };
 
-	const handleChange = (event) =>
-		setData({ ...data, [event.target.name]: event.target.value });
+  const handleChange = (event) =>
+    setData({ ...data, [event.target.name]: event.target.value });
 
-	const showSignUp = (event) => {
-		event.preventDefault();
-		setShow(true);
-		setShowCreateNewUser(true);
-	};
+  const showSignUp = (event) => {
+    event.preventDefault();
+    setShow(true);
+    setShowCreateNewUser(true);
+  };
 
-	const showSignIn = (event) => {
-		event.preventDefault();
-		setShowCreateNewUser(false);
-	};
+  const showSignIn = (event) => {
+    event.preventDefault();
+    setShowCreateNewUser(false);
+  };
 
-	const handleSignIn = (event) => {
-		event.preventDefault();
-		userData.signIn(data);
-		setShowCreateNewUser(false);
-		handleClose();
-	};
+  const handleSignIn = (event) => {
+    event.preventDefault();
+    userData.signIn(data);
+    setShowCreateNewUser(false);
+    handleClose();
+  };
 
-	const handleSignUp = (event) => {
-		event.preventDefault();
-		userData.signUp(data);
-		setShowCreateNewUser(false);
-		handleClose();
-	};
+  const handleSignUp = (event) => {
+    event.preventDefault();
+    userData.signUp(data);
+    setShowCreateNewUser(false);
+    handleClose();
+  };
 
-	return (
-		<div>
-			<button className="sigin-up-btn" onClick={showSignUp}>
-				Sign Up
-			</button>
-			{/* <Dropdown>
+  return (
+    <div>
+      <button className="sigin-up-btn" onClick={showSignUp}>
+        Sign Up
+      </button>
+      {/* <Dropdown>
 				<Dropdown.Toggle id="dropdown-basic">Sign in</Dropdown.Toggle>
 				<Dropdown.Menu>
 				<Dropdown.Item onClick={handleShow} href="#/action-3">
@@ -71,29 +71,29 @@ function Sign() {
 				</Dropdown.Item>
 				</Dropdown.Menu>
 			</Dropdown> */}
-			{showCreateNewUser ? (
-				<SignUp
-					show={show}
-					data={data}
-					handleChange={handleChange}
-					handleClose={handleClose}
-					handleSignUp={handleSignUp}
-					showSignUp={showSignUp}
-					showSignIn={showSignIn}
-				/>
-			) : (
-				<SignIn
-					show={show}
-					data={data}
-					handleChange={handleChange}
-					handleClose={handleClose}
-					handleSignIn={handleSignIn}
-					showSignUp={showSignUp}
-					showSignIn={showSignIn}
-				/>
-			)}
-		</div>
-	);
+      {showCreateNewUser ? (
+        <SignUp
+          show={show}
+          data={data}
+          handleChange={handleChange}
+          handleClose={handleClose}
+          handleSignUp={handleSignUp}
+          showSignUp={showSignUp}
+          showSignIn={showSignIn}
+        />
+      ) : (
+        <SignIn
+          show={show}
+          data={data}
+          handleChange={handleChange}
+          handleClose={handleClose}
+          handleSignIn={handleSignIn}
+          showSignUp={showSignUp}
+          showSignIn={showSignIn}
+        />
+      )}
+    </div>
+  );
 }
 
 export default observer(Sign);

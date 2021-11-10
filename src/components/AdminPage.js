@@ -11,17 +11,17 @@ import MovieModal from "./MovieModal";
 import userStore from "../stores/userStore";
 
 const AdminPage = () => {
-	if (!userStore.user || !userStore.user.admin) return <Navigate to="/" />;
+  if (!userStore.user || !userStore.user.admin) return <Navigate to="/" />;
 
-	return (
-		<div>
-			<div className="adminContainer">
-				<MovieModal />
-				<GenreModal />
-				<CelebrityModal />
-			</div>
-		</div>
-	);
+  return (
+    <div>
+      <div className="adminContainer">
+        <MovieModal />
+        <GenreModal />
+        <CelebrityModal />
+      </div>
+    </div>
+  );
 };
 
 export default observer(AdminPage);
