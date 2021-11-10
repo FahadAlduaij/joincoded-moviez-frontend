@@ -7,19 +7,22 @@ import { Navigate } from "react-router-dom";
 import Tags from "./Tags";
 
 // stores
-import movieStore from "../stores/movieStore";
+// import movieStore from "../stores/movieStore";
+import singleStore from "../stores/singleStore";
 
 function MovieDetails() {
   const { movieSlug } = useParams();
-  const movie = movieStore.movies.find((movie) => movie.slug === movieSlug);
-  if (!movie) return <Navigate to="/movies" />;
+  // const movie = movieStore.movies.find((movie) => movie.slug === movieSlug);
+  const movie = singleStore.movies.find((movie) => movie.slug === movieSlug);
 
   const genresList = movie.genres.map((genre) => (
-    <Tags key={genre._id} item={genre.name} />
+    <Tags key={genre._id} item={genre.name} slug={genre.slug} />
   ));
   const celebritiesList = movie.celebrities.map((celebrity) => (
-    <Tags key={celebrity._id} item={celebrity.name} />
+    <Tags key={celebrity._id} item={celebrity.name} slug={celebrity.slug} />
   ));
+
+  if (!movie) return <Navigate to="/movies" />;
 
   return (
     <div>

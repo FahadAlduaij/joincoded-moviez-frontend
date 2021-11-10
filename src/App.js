@@ -9,6 +9,7 @@ import HomePage from "./components/HomePage";
 import MovieList from "./components/MovieList";
 import MovieDetails from "./components/MovieDetails";
 import AdminPage from "./components/AdminPage";
+import GenreDetails from "./components/GenreDetails";
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 			<Container>
 				<Routes>
 					<Route path="/movies/:movieSlug" element={<MovieDetails />} />
+					<Route path="/genres/:genreSlug" element={<GenreDetails />} />
 					<Route path="/movies" element={<MovieList />} />
 					<Route path="/signin" element={<Sign />} />
 					<Route path="/admin" element={<AdminPage />} />
