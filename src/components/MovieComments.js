@@ -13,10 +13,10 @@ const MovieComments = ({ movieId }) => {
   const commentsList = movie.comments.map((comment) => (
     <div key={comment._id} className="">
       <div className="">
-        <p>${comment.username}</p>
-        <p>${comment.dateSent}</p>
+        <p>{comment.username}</p>
+        <p>{comment.dateSent}</p>
       </div>
-      <div className="">${comment.message}</div>
+      <div className="">{comment.message}</div>
     </div>
   ));
 
