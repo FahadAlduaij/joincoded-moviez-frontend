@@ -24,9 +24,8 @@ function GenreDetails() {
 
 	return (
 		<div className="genre-details-container">
-			<div>
-				<SearchBar className="searchBar-movie-list" setItem={setQuery} />
-			</div>
+			<SearchBar className="searchBar-movie-list" setItem={setQuery} />
+
 			<h1>{genre.name}</h1>
 			<div className="genre-details-header scrolling-wrapper row flex-column flex-nowrap pb-1 pt-2">
 				{movieList}
