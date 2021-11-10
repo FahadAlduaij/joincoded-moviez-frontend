@@ -22,7 +22,7 @@ function HomePage() {
         the newest movie and TV shows
       </p>
       <form>
-        <input type="text" placeholder="&#x270e; Search for a movie" />
+        <input type="text" placeholder="&#x270e; Search for a Movie!" />
         <Link to="/movies">
           <button onClick={handleFindMovie}>Find Movie</button>
         </Link>

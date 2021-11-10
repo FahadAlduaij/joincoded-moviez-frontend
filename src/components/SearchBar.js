@@ -12,7 +12,7 @@ function SearchBar({ className, setItem }) {
           />
           <input
             type="text"
-            placeholder=" Search for a movie"
+            placeholder=" Search for a Movie!"
             onChange={(e) => setItem(e.target.value)}
           />
         </form>
