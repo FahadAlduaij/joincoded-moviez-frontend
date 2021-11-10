@@ -2,7 +2,6 @@ import "./App.css";
 import { Route, Routes } from "react-router";
 import { Container } from "react-bootstrap";
 
-
 // Components
 import NavBar from "./components/NavBar";
 import Sign from "./components/Sign";
@@ -16,11 +15,7 @@ import CelebrityDetail from "./components/CelebrityDetail";
 function App() {
 	return (
 		<div>
-
-			
-			<div>
-				<NavBar />
-			</div>
+			<NavBar />
 			<Container>
 				<Routes>
 					<Route path="/movies/:movieSlug" element={<MovieDetails />} />
