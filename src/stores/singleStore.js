@@ -103,7 +103,7 @@ class SingleStore {
       upDateMovie.comments.push(res.data);
       console.log("after", upDateMovie);
 
-      toast.warn("Comment Sent Successfully!");
+      toast.success("Comment Sent Successfully!");
     } catch (error) {
       toast.warn("Something went wrong!");
       console.log(error);

@@ -473,21 +473,6 @@ body {
 	font-size: 17px;
 }
 
-.signinbtn {
-	width: 100px !important;
-	margin-top: 6px !important;
-	margin-left: -10px !important;
-	position: absolute !important;
-	display: run-in !important;
-	font-family: "Open Sans", sans-serif !important;
-	font-size: 1.2rem !important;
-	border: 2px solid #ce0202 !important;
-	padding: 0px !important;
-	border-radius: 0px 0px 20px 5px !important;
-	color: #ce0202 !important;
-	text-align: center !important;
-}
-
 .butn {
 	position: relative;
 	display: run-in;
@@ -800,4 +785,34 @@ nav {
 }
 .genres-and-celebrities-tags:hover {
 	background-color: rgba(255, 255, 255, 0.198);
+}
+
+
+
+.comments-container {
+	color: #fff;
+}
+
+.comments-text {
+	border: 1px solid #fff;
+	background-color: rgba(49, 49, 49, 0.082);
+	padding: 30px;
+	margin-bottom: 30px;
+	border-radius: 20px;
+	width: 100%;
+}
+
+.comment-header {
+	font-weight: bold;
+	font-size: 1.2rem;
+	border-bottom: 1px solid #fff;
+	
+}
+
+.comment-text {
+	font-size: 1.2rem;
+}
+
+.comments-input {
+	width: 100%;
 }
