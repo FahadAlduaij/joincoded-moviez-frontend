@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Modal } from "react-bootstrap";
 import { observer } from "mobx-react";
-import celebrityStore from "../stores/celebrityStore";
+import singleStore from "../stores/singleStore";
+// import celebrityStore from "../stores/celebrityStore";
 
 const CelebrityModal = () => {
   const [celebrity, setCelebrity] = useState({
@@ -25,13 +26,14 @@ const CelebrityModal = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    celebrityStore.createCelebrity(celebrity);
+    // celebrityStore.createCelebrity(celebrity);
+    singleStore.createCelebrity(celebrity);
     handleClose();
   };
 
   return (
     <>
-      <button className="adminButtons"  variant="success" onClick={handleShow}>
+      <button className="adminButtons" variant="success" onClick={handleShow}>
         New Celebrity
       </button>
 
@@ -88,7 +90,7 @@ const CelebrityModal = () => {
           </Modal.Body>
           <Modal.Footer>
             <button className="sigin-up-btn" onClick={handleSubmit}>
-            Create New
+              Create New
             </button>
           </Modal.Footer>
         </Form>

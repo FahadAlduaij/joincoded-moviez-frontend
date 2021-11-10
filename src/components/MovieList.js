@@ -7,12 +7,16 @@ import SearchBar from "./SearchBar";
 import MoviesGenre from "./MoviesGenre";
 
 // Stores
-import genreStore from "../stores/genreStore";
+// import genreStore from "../stores/genreStore";
+import singleStore from "../stores/singleStore";
 
 function MovieList() {
   const [query, setQuery] = useState("");
 
-  const movieList = genreStore.genres.map((genre) => (
+  // const movieList = genreStore.genres.map((genre) => (
+  //   <MoviesGenre key={genre._id} genre={genre} query={query} />
+  // ));
+  const movieList = singleStore.genres.map((genre) => (
     <MoviesGenre key={genre._id} genre={genre} query={query} />
   ));
 

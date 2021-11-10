@@ -9,9 +9,10 @@ import GenreOptionsMovieCreate from "./GenreOptionsMovieCreate";
 import celebrityOptionsMovieCreate from "./celebrityOptionsMovieCreate";
 
 // Stores
-import movieStore from "../stores/movieStore";
-import genreStore from "../stores/genreStore";
-import celebrityStore from "../stores/celebrityStore";
+// import movieStore from "../stores/movieStore";
+// import genreStore from "../stores/genreStore";
+// import celebrityStore from "../stores/celebrityStore";
+import singleStore from "../stores/singleStore";
 
 function MovieModal() {
   const [movie, setMovie] = useState({
@@ -29,12 +30,22 @@ function MovieModal() {
     optionSelected: null,
   });
 
-  const genreOptions = genreStore.genres.map((genre) => ({
+  // const genreOptions = genreStore.genres.map((genre) => ({
+  //   value: genre.name,
+  //   label: genre.name,
+  // }));
+
+  // const celebrityOptions = celebrityStore.celebrities.map((celebrity) => ({
+  //   value: celebrity.name,
+  //   label: celebrity.name,
+  // }));
+
+  const genreOptions = singleStore.genres.map((genre) => ({
     value: genre.name,
     label: genre.name,
   }));
 
-  const celebrityOptions = celebrityStore.celebrities.map((celebrity) => ({
+  const celebrityOptions = singleStore.celebrities.map((celebrity) => ({
     value: celebrity.name,
     label: celebrity.name,
   }));
@@ -63,6 +74,29 @@ function MovieModal() {
     });
   };
 
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   let genreArray = [];
+  //   let celebrityArray = [];
+  //   if (genresSelected.optionSelected) {
+  //     genreArray = genresSelected.optionSelected.map(
+  //       (element) => element.value
+  //     );
+  //   }
+  //   if (celebritySelected.optionSelected) {
+  //     celebrityArray = celebritySelected.optionSelected.map(
+  //       (element) => element.value
+  //     );
+  //   }
+  //   const newMovie = {
+  //     ...movie,
+  //     genres: genreArray,
+  //     celebrities: celebrityArray,
+  //   };
+  //   movieStore.createMovie(newMovie);
+  //   handleClose();
+  // };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     let genreArray = [];
@@ -82,7 +116,7 @@ function MovieModal() {
       genres: genreArray,
       celebrities: celebrityArray,
     };
-    movieStore.createMovie(newMovie);
+    singleStore.createMovie(newMovie);
     handleClose();
   };
 
