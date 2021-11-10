@@ -33,16 +33,15 @@ function MovieDetails() {
 	));
 
 	return (
-		<div>
-			<div>
-				<img className="imged" src={movie.image} alt="showing the movie" />
-			</div>
-			<div>
-				<h1 className="titled">{movie.title}</h1>
-				<p className="rdd">{movie.releaseDate}</p>
-				<p className="descrd">{movie.description}</p>
-				<span className="genbtn">{genresList}</span>
-				<span className="celebtn"> {celebritiesList} </span>
+		<div className="container d-flex flex-row justify-content-start align-items-center p-2">
+			<img className="movieDetails-img" src={movie.image} alt="showing the movie" />
+
+			<div className="movieDetails-info flex-column flex-fill">
+				<h1 className="">{movie.title}</h1>
+				<p className="">{movie.releaseDate}</p>
+				<p className="">{movie.description}</p>
+				<div >{genresList}</div>
+				<div>{celebritiesList}</div>
 			</div>
 		</div>
 	);
