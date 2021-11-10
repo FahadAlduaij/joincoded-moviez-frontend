@@ -52,6 +52,17 @@ const CelebrityModal = () => {
 								/>
 							</Form.Group>
 
+							<Form.Group className="mb-3" controlId="formBasicUsername">
+								<Form.Label>Image</Form.Label>
+								<Form.Control
+									onChange={handleChange}
+									name="image"
+									type="text"
+									value={celebrity.image}
+									placeholder="Enter Image"
+								/>
+							</Form.Group>
+
 							<Form.Group className="mb-3" controlId="formBasicPassword">
 								<Form.Label>Bio</Form.Label>
 								<Form.Control
@@ -71,16 +82,6 @@ const CelebrityModal = () => {
 									value={celebrity.age}
 									type="age"
 									placeholder="Enter Age"
-								/>
-							</Form.Group>
-							<Form.Group className="mb-3" controlId="formBasicUsername">
-								<Form.Label>Image</Form.Label>
-								<Form.Control
-									onChange={handleChange}
-									name="image"
-									type="text"
-									value={celebrity.image}
-									placeholder="Enter Image"
 								/>
 							</Form.Group>
 						</Container>

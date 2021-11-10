@@ -21,9 +21,14 @@ function NavBar() {
 				</Link>
 
 				<ul className="nav-links">
+					<Link to="/">
+						<li>
+							<a>Home</a>
+						</li>
+					</Link>
 					<Link to="/admin">
 						<li>
-							<a>{userStore.user ? "Admin" : "Home"}</a>
+							<a>{userStore.user && "Admin"}</a>
 						</li>
 					</Link>
 					<Link to="/movies">
