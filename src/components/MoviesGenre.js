@@ -11,7 +11,9 @@ function MoviesGenre({ genre, query }) {
     )
     .map((movie) => <MovieCard key={movie._id} movie={movie} />);
 
+    if (movies.length >= 1){
   return (
+    
     <div>
       <Link className="genre-header-links" to={`/genres/${genre.slug}`}>
         <h1>{genre.name}</h1>
@@ -21,6 +23,13 @@ function MoviesGenre({ genre, query }) {
       </div>
     </div>
   );
+  } else {
+    return(    
+      <>
+      </>
+    )
+
+  }
 }
 
 export default observer(MoviesGenre);
