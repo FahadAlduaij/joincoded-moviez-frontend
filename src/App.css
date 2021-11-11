@@ -796,9 +796,10 @@ nav {
   border: 1px solid #fff;
   border-radius: 20px;
   padding: 7px;
-  width: 150px;
+  width: 200px;
   transition: 0.3;
 }
+
 .genres-and-celebrities-tags:hover {
   background-color: rgba(255, 255, 255, 0.198);
 }
