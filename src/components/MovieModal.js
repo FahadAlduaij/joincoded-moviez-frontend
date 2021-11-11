@@ -49,9 +49,9 @@ function MovieModal() {
 		setMovie({ ...movie, [event.target.name]: event.target.value });
 	};
 
-	// const handleImage = (event) => {
-	//   setMovie({ ...movie, image: event.target.files[0] });
-	// };
+	const handleImage = (event) => {
+	  setMovie({ ...movie, image: event.target.files[0] });
+	};
 
 	const genreSelectHandleChange = (selected) => {
 		setGenresSelect({
@@ -113,12 +113,12 @@ function MovieModal() {
 								/>
 							</Form.Group>
 
-							{/* <Form.Group className="mb-3" controlId="formBasicUsername">
+							<Form.Group className="mb-3" controlId="formBasicUsername">
                 <Form.Label>Image</Form.Label>
                 <Form.Control onChange={handleImage} name="image" type="file" />
-              </Form.Group> */}
+              </Form.Group>
 
-							<Form.Group className="mb-3" controlId="formBasicImage">
+							{/* <Form.Group className="mb-3" controlId="formBasicImage">
 								<Form.Label>Image</Form.Label>
 								<Form.Control
 									onChange={handleChange}
@@ -127,7 +127,7 @@ function MovieModal() {
 									type="text"
 									placeholder="Enter Image"
 								/>
-							</Form.Group>
+							</Form.Group> */}
 
 							<Form.Group className="mb-3" controlId="formBasicReleaseDate">
 								<Form.Label>Release Date</Form.Label>

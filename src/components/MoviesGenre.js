@@ -7,10 +7,7 @@ function MoviesGenre({ genre, query }) {
   const movies = genre.movies
     .filter(
       (movie) =>
-        movie.title.toLowerCase().includes(query.toLowerCase()) ||
-        movie.celebrities.filter((celebrity) =>
-          celebrity.name.toLowerCase().includes(query.toLowerCase())
-        )
+        movie.title.toLowerCase().includes(query.toLowerCase())
     )
     .map((movie) => <MovieCard key={movie._id} movie={movie} />);
 
