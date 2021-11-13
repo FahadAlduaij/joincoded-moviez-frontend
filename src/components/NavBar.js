@@ -9,6 +9,10 @@ import Sign from "./Sign";
 import userStore from "../stores/userStore";
 
 function NavBar() {
+	if (userStore.user) {
+		userStore.checkRole();
+	}
+
 	return (
 		<div className="nav-bar">
 			<nav>
@@ -31,11 +35,15 @@ function NavBar() {
 							<p>Movies</p>
 						</li>
 					</Link>
-					<Link to="/admin">
-						<li>
-							<p>{userStore.user && "Admin"}</p>
-						</li>
-					</Link>
+
+					{userStore.isUserAdmin && (
+						<Link to="/admin">
+							<li>
+								<p>Admin</p>
+							</li>
+						</Link>
+					)}
+
 					<li>
 						{userStore.user ? (
 							<div className="logout-and-welcome-name">

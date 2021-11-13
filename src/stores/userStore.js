@@ -6,14 +6,18 @@ class UserStore {
 	constructor() {
 		makeObservable(this, {
 			user: observable,
+			isUserAdmin: observable,
 			setUser: action,
 			signIn: action,
 			signUp: action,
 			signOut: action,
+			checkRole: action,
 		});
 	}
 
 	user = null;
+	// To check if the user is admin or no.
+	isUserAdmin = false;
 
 	setUser = (token) => {
 		localStorage.setItem("myToken", token);
@@ -30,6 +34,19 @@ class UserStore {
 				return this.setUser(token);
 			} else {
 				return this.signOut();
+			}
+		}
+		console.log(this.isUserAdmin);
+	};
+
+	checkRole = () => {
+		const token = localStorage.getItem("myToken");
+		if (token) {
+			const tempUser = decode(token);
+			if (tempUser.admin) {
+				this.isUserAdmin = true;
+			} else {
+				this.isUserAdmin = false;
 			}
 		}
 	};
@@ -56,6 +73,7 @@ class UserStore {
 		delete instance.defaults.headers.common.Authorization;
 		localStorage.removeItem("myToken");
 		this.user = null;
+		this.isUserAdmin = false;
 	};
 }
 

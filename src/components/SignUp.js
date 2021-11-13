@@ -17,7 +17,7 @@ function SignUp({
 			<Modal.Body >
 				<Container>
 					<Form>
-						<Form.Group className="mb-3" controlId="formBasicUsername">
+						<Form.Group className="mb-3" controlId="formBasicEmail">
 							<Form.Label>Email</Form.Label>
 							<Form.Control
 								onChange={handleChange}
