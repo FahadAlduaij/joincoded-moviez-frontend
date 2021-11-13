@@ -22,11 +22,7 @@ function MoviesGenre({ genre, query }) {
 			</div>
 		);
 	} else {
-		return (
-			<>
-				<h1 className="genre-header">There Is no Movies</h1>
-			</>
-		);
+		return <></>;
 	}
 }
 

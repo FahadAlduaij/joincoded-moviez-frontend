@@ -36,7 +36,6 @@ class UserStore {
 				return this.signOut();
 			}
 		}
-		console.log(this.isUserAdmin);
 	};
 
 	checkRole = () => {
