@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import singleStore from "../stores/singleStore";
 import { Form, Container, Modal } from "react-bootstrap";
+
+// Stores
+import movieStore from "../stores/movieStore";
 
 const MovieCommentInput = ({ movieId }) => {
 	const [userComment, setUserComment] = useState({ message: "" });
@@ -11,7 +13,7 @@ const MovieCommentInput = ({ movieId }) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		singleStore.createCommentForMovie(movieId, userComment);
+		movieStore.createCommentForMovie(movieId, userComment);
 		setUserComment({ message: "" });
 	};
 	return (

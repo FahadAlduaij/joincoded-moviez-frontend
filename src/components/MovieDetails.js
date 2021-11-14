@@ -9,12 +9,12 @@ import MovieCommentInput from "./MovieCommentInput";
 import MovieComments from "./MovieComments";
 
 // stores
-// import movieStore from "../stores/movieStore";
-import singleStore from "../stores/singleStore";
+import movieStore from "../stores/movieStore";
+// import singleStore from "../stores/singleStore";
 
 function MovieDetails() {
 	const { movieSlug } = useParams();
-	const movie = singleStore.movies.find((movie) => movie.slug === movieSlug);
+	const movie = movieStore.movies.find((movie) => movie.slug === movieSlug);
 	if (!movie) return <Navigate to="/movies" />;
 
 	const genresList = movie.genres.map((genre) => (

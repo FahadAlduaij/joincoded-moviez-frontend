@@ -9,7 +9,7 @@ import GenreOptionsMovieCreate from "./GenreOptionsMovieCreate";
 import celebrityOptionsMovieCreate from "./celebrityOptionsMovieCreate";
 
 // Stores
-// import movieStore from "../stores/movieStore";
+import movieStore from "../stores/movieStore";
 // import genreStore from "../stores/genreStore";
 // import celebrityStore from "../stores/celebrityStore";
 import singleStore from "../stores/singleStore";
@@ -84,7 +84,7 @@ function MovieModal() {
 			genres: genreArray,
 			celebrities: celebrityArray,
 		};
-		singleStore.createMovie(newMovie);
+		movieStore.createMovie(newMovie);
 		handleClose();
 	};
 

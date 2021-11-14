@@ -3,16 +3,13 @@ import { observer } from "mobx-react";
 import Moment from "react-moment";
 
 // Stores
-import singleStore from "../stores/singleStore";
+import movieStore from "../stores/movieStore";
+// import singleStore from "../stores/singleStore";
 
 const MovieComments = ({ movieId }) => {
-	console.log(movieId);
-	const movie = singleStore.movies.find((movie) => movie._id === movieId);
-	console.log(typeof movieId, typeof movie._id);
+	const movie = movieStore.movies.find((movie) => movie._id === movieId);
 
-	if (!movie.comments.length >= 1) return <p>Be the first to Comment</p>;
-
-  
+	if (!movie.comments.length >= 1) return <h4>Be The First to Comment</h4>;
 
 	const commentsList = movie.comments.map((comment) => (
 		<div key={comment._id} className="comments-text">
