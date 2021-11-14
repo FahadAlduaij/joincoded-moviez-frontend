@@ -1,6 +1,10 @@
 import { makeAutoObservable } from "mobx";
-import instance from "../api/instance";
 import { toast } from "react-toastify";
+
+// Stores
+import instance from "../api/instance";
+import genreStore from "./genreStore";
+import celebrityStore from "./celebrityStore";
 
 class MovieStore {
 	constructor() {
@@ -27,19 +31,19 @@ class MovieStore {
 			const res = await instance.post("/movies", formData);
 			this.movies.push(res.data);
 
-			// res.data.genres.forEach((resGenre) => {
-			// 	const genreToUpdate = this.genres.find(
-			// 		(storeGenre) => storeGenre._id === resGenre._id
-			// 	);
-			// 	genreToUpdate.movies.push(res.data);
-			// });
+			res.data.genres.forEach((resGenre) => {
+				const genreToUpdate = genreStore.genres.find(
+					(storeGenre) => storeGenre._id === resGenre._id
+				);
+				genreToUpdate.movies.push(res.data);
+			});
 
-			// res.data.celebrities.forEach((resCeleb) => {
-			// 	const celebToUpdate = this.genres.celebrities.find(
-			// 		(storeCeleb) => storeCeleb._id === resCeleb._id
-			// 	);
-			// 	celebToUpdate.movies.push(res.data);
-			// });
+			res.data.celebrities.forEach((resCeleb) => {
+				const celebToUpdate = celebrityStore.celebrities.find(
+					(storeCeleb) => storeCeleb._id === resCeleb._id
+				);
+				celebToUpdate.movies.push(res.data);
+			});
 
 			toast.success("Created a Movie Successfully");
 		} catch (error) {

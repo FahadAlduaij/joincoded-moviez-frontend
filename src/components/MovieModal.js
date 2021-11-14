@@ -9,10 +9,9 @@ import GenreOptionsMovieCreate from "./GenreOptionsMovieCreate";
 import celebrityOptionsMovieCreate from "./celebrityOptionsMovieCreate";
 
 // Stores
+import genreStore from "../stores/genreStore";
 import movieStore from "../stores/movieStore";
-// import genreStore from "../stores/genreStore";
-// import celebrityStore from "../stores/celebrityStore";
-import singleStore from "../stores/singleStore";
+import celebrityStore from "../stores/celebrityStore";
 
 function MovieModal() {
 	const [movie, setMovie] = useState({
@@ -31,12 +30,12 @@ function MovieModal() {
 		optionSelected: null,
 	});
 
-	const genreOptions = singleStore.genres.map((genre) => ({
+	const genreOptions = genreStore.genres.map((genre) => ({
 		value: genre.name,
 		label: genre.name,
 	}));
 
-	const celebrityOptions = singleStore.celebrities.map((celebrity) => ({
+	const celebrityOptions = celebrityStore.celebrities.map((celebrity) => ({
 		value: celebrity.name,
 		label: celebrity.name,
 	}));
@@ -50,7 +49,7 @@ function MovieModal() {
 	};
 
 	const handleImage = (event) => {
-	  setMovie({ ...movie, image: event.target.files[0] });
+		setMovie({ ...movie, image: event.target.files[0] });
 	};
 
 	const genreSelectHandleChange = (selected) => {
@@ -69,6 +68,7 @@ function MovieModal() {
 		event.preventDefault();
 		let genreArray = [];
 		let celebrityArray = [];
+
 		if (genresSelected.optionSelected) {
 			genreArray = genresSelected.optionSelected.map(
 				(element) => element.value
@@ -114,9 +114,9 @@ function MovieModal() {
 							</Form.Group>
 
 							<Form.Group className="mb-3" controlId="formBasicUsername">
-                <Form.Label>Image</Form.Label>
-                <Form.Control onChange={handleImage} name="image" type="file" />
-              </Form.Group>
+								<Form.Label>Image</Form.Label>
+								<Form.Control onChange={handleImage} name="image" type="file" />
+							</Form.Group>
 
 							{/* <Form.Group className="mb-3" controlId="formBasicImage">
 								<Form.Label>Image</Form.Label>

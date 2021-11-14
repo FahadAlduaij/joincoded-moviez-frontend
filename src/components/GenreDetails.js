@@ -8,13 +8,13 @@ import MovieCard from "./MovieCard";
 import SearchBar from "./SearchBar";
 
 // Stores
-import singleStore from "../stores/singleStore";
+import genreStore from "../stores/genreStore";
 import { observer } from "mobx-react";
 
 function GenreDetails() {
 	const [query, setQuery] = useState("");
 	const { genreSlug } = useParams();
-	const genre = singleStore.genres.find((genre) => genre.slug === genreSlug);
+	const genre = genreStore.genres.find((genre) => genre.slug === genreSlug);
 	if (!genre) return <Navigate to="/movies/:movieSlug" />;
 
 	const movieList = genre.movies

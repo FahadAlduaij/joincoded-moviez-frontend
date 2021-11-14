@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
 
 // Stores
-import movieStore from "../stores/movieStore"
+// import movieStore from "../stores/movieStore";
 
 function MoviesGenre({ genre, query }) {
-	const movies = movieStore.movies
+	const movies = genre.movies
 		.filter((movie) => movie.title.toLowerCase().includes(query.toLowerCase()))
 		.map((movie) => <MovieCard key={movie._id} movie={movie} />);
 

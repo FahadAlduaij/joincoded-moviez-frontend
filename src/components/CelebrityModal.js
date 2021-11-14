@@ -3,7 +3,7 @@ import { Form, Container, Modal } from "react-bootstrap";
 import { observer } from "mobx-react";
 
 // Stores
-import singleStore from "../stores/singleStore";
+import celebrityStore from "../stores/celebrityStore";
 
 const CelebrityModal = () => {
 	const [celebrity, setCelebrity] = useState({
@@ -23,8 +23,7 @@ const CelebrityModal = () => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		// celebrityStore.createCelebrity(celebrity);
-		singleStore.createCelebrity(celebrity);
+		celebrityStore.createCelebrity(celebrity);
 		handleClose();
 	};
 

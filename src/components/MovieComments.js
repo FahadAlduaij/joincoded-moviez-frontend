@@ -4,7 +4,7 @@ import Moment from "react-moment";
 
 // Stores
 import movieStore from "../stores/movieStore";
-// import singleStore from "../stores/singleStore";
+// import genreStore from "../stores/genreStore";
 
 const MovieComments = ({ movieId }) => {
 	const movie = movieStore.movies.find((movie) => movie._id === movieId);

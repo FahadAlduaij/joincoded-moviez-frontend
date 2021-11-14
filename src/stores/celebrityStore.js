@@ -1,34 +1,34 @@
-import instance from "../api/instance";
 import { makeAutoObservable } from "mobx";
+import { toast } from "react-toastify";
 
+// Stores
+import instance from "../api/instance";
 class CelebrityStore {
-  constructor() {
-    makeAutoObservable(this);
-  }
+	constructor() {
+		makeAutoObservable(this);
+	}
 
-  celebrities = [];
+	celebrities = [];
 
-  fetchCelebrities = async () => {
-    try {
-      const res = await instance.get("/celebrities");
-      this.celebrities = res.data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
+	fetchCelebrities = async () => {
+		try {
+			const res = await instance.get("/celebrities");
+			this.celebrities = res.data;
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
-  createCelebrity = async (celebInfo) => {
-    try {
-      const formData = new FormData();
-      for (const key in celebInfo) {
-        formData.append(key, celebInfo[key]);
-      }
-      const res = await instance.post("/celebrities", formData);
-      this.celebrities.push(res.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+	createCelebrity = async (celebInfo) => {
+		try {
+			const res = await instance.post("/celebrities", celebInfo);
+			this.celebrities.push(res.data);
+			toast.success("Created a Celebrity Successfully");
+		} catch (error) {
+			toast.warn("Something went wrong!");
+			console.log(error);
+		}
+	};
 }
 
 const celebrityStore = new CelebrityStore();

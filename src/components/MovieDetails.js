@@ -10,7 +10,7 @@ import MovieComments from "./MovieComments";
 
 // stores
 import movieStore from "../stores/movieStore";
-// import singleStore from "../stores/singleStore";
+// import genreStore from "../stores/genreStore";
 
 function MovieDetails() {
 	const { movieSlug } = useParams();
