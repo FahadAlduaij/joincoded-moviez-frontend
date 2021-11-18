@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { observer } from "mobx-react";
 
 // Components
-import Sign from "./Sign";
+import Sign from "./Auth/Sign";
 
 // Stores
 import userStore from "../stores/userStore";

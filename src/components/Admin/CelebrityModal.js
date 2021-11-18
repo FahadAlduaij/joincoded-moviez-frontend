@@ -3,7 +3,7 @@ import { Form, Container, Modal } from "react-bootstrap";
 import { observer } from "mobx-react";
 
 // Stores
-import celebrityStore from "../stores/celebrityStore";
+import celebrityStore from "../../stores/celebrityStore";
 
 const CelebrityModal = () => {
 	const [celebrity, setCelebrity] = useState({

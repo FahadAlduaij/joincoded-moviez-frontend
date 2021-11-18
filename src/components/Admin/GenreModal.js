@@ -4,7 +4,7 @@ import { observer } from "mobx-react";
 
 // Stores
 // import genreStore from "../stores/genreStore";
-import genreStore from "../stores/genreStore";
+import genreStore from "../../stores/genreStore";
 
 function GenreModal() {
 	const [genre, setGenre] = useState({

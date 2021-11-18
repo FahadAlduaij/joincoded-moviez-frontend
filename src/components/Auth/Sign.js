@@ -7,7 +7,7 @@ import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 
 // Stores
-import userData from "../stores/userStore";
+import userData from "../../stores/userStore";
 
 function Sign() {
   const [data, setData] = useState({

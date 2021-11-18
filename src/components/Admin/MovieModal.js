@@ -5,13 +5,13 @@ import { useState } from "react";
 import { default as ReactSelect } from "react-select";
 
 // Components
-import GenreOptionsMovieCreate from "./GenreOptionsMovieCreate";
-import celebrityOptionsMovieCreate from "./celebrityOptionsMovieCreate";
+import GenreOptionsMovieCreate from "../GenreOptionsMovieCreate";
+import celebrityOptionsMovieCreate from "../celebrityOptionsMovieCreate";
 
 // Stores
-import genreStore from "../stores/genreStore";
-import movieStore from "../stores/movieStore";
-import celebrityStore from "../stores/celebrityStore";
+import genreStore from "../../stores/genreStore";
+import movieStore from "../../stores/movieStore";
+import celebrityStore from "../../stores/celebrityStore";
 
 function MovieModal() {
 	const [movie, setMovie] = useState({
@@ -84,7 +84,11 @@ function MovieModal() {
 			genres: genreArray,
 			celebrities: celebrityArray,
 		};
-		movieStore.createMovie(newMovie);
+		movieStore.createMovie(
+			newMovie,
+			genreStore.genres,
+			celebrityStore.celebrities
+		);
 		handleClose();
 	};
 

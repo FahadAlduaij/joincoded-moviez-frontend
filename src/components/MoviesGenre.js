@@ -1,12 +1,9 @@
-import { observer } from "mobx-react";
 import React from "react";
+import { observer } from "mobx-react";
 import { Link } from "react-router-dom";
 
 // Components
 import MovieCard from "./MovieCard";
-
-// Stores
-// import movieStore from "../stores/movieStore";
 
 function MoviesGenre({ genre, query }) {
 	const movies = genre.movies

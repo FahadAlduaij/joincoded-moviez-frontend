@@ -1,8 +1,8 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
 import { toast } from "react-toastify";
 
 // Stores
-import instance from "../api/instance";
+import instance from "../stores/instance";
 class CelebrityStore {
 	constructor() {
 		makeAutoObservable(this);
@@ -13,7 +13,9 @@ class CelebrityStore {
 	fetchCelebrities = async () => {
 		try {
 			const res = await instance.get("/celebrities");
-			this.celebrities = res.data;
+			runInAction(() => {
+				this.celebrities = res.data;
+			});
 		} catch (error) {
 			console.log(error);
 		}

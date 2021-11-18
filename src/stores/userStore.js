@@ -1,6 +1,6 @@
 import decode from "jwt-decode";
 import { action, makeObservable, observable } from "mobx";
-import instance from "../api/instance";
+import instance from "./instance";
 
 class UserStore {
 	constructor() {
@@ -15,9 +15,9 @@ class UserStore {
 		});
 	}
 
-	user = null;
-	// To check if the user is admin or no.
+	// To check if the user is admin.
 	isUserAdmin = false;
+	user = null;
 
 	setUser = (token) => {
 		localStorage.setItem("myToken", token);

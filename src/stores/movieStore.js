@@ -1,10 +1,8 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, runInAction } from "mobx";
 import { toast } from "react-toastify";
 
 // Stores
-import instance from "../api/instance";
-import genreStore from "./genreStore";
-import celebrityStore from "./celebrityStore";
+import instance from "./instance";
 
 class MovieStore {
 	constructor() {
@@ -16,13 +14,15 @@ class MovieStore {
 	fetchMovies = async () => {
 		try {
 			const res = await instance.get("/movies");
-			this.movies = res.data;
+			runInAction(() => {
+				this.movies = res.data;
+			});
 		} catch (error) {
 			console.log(error);
 		}
 	};
 
-	createMovie = async (movieInfo) => {
+	createMovie = async (movieInfo, genres, celebrities) => {
 		try {
 			const formData = new FormData();
 			for (const key in movieInfo) {
@@ -32,14 +32,14 @@ class MovieStore {
 			this.movies.push(res.data);
 
 			res.data.genres.forEach((resGenre) => {
-				const genreToUpdate = genreStore.genres.find(
+				const genreToUpdate = genres.find(
 					(storeGenre) => storeGenre._id === resGenre._id
 				);
 				genreToUpdate.movies.push(res.data);
 			});
 
 			res.data.celebrities.forEach((resCeleb) => {
-				const celebToUpdate = celebrityStore.celebrities.find(
+				const celebToUpdate = celebrities.find(
 					(storeCeleb) => storeCeleb._id === resCeleb._id
 				);
 				celebToUpdate.movies.push(res.data);
