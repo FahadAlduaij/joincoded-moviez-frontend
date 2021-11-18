@@ -52,6 +52,22 @@ class MovieStore {
 		}
 	};
 
+	deleteMovie = async (movie, genre) => {
+		try {
+			// await instance.delete(`/movies/${movie._id}`);
+			console.log(movie._id);
+			genre.forEach((movie) => {
+				movie.movies.forEach((m) => {
+					console.log(m._id);
+
+					console.log(m.filter((x) => x._id !== movie._id));
+				});
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 	//Comments on Movies
 	createCommentForMovie = async (movieId, commentInfo) => {
 		try {

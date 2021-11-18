@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import { useState } from "react";
 
 // Components
-import MovieCard from "./MovieCard";
+import MovieCard from "./Movies/MovieCard";
 import SearchBar from "./SearchBar";
 
 // Stores

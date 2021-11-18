@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Container, Modal } from "react-bootstrap";
 
 // Stores
-import movieStore from "../stores/movieStore";
+import movieStore from "../../stores/movieStore";
 
 const MovieCommentInput = ({ movieId }) => {
 	const [userComment, setUserComment] = useState({ message: "" });

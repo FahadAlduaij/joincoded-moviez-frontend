@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 import Moment from "react-moment";
 
 // Stores
-import movieStore from "../stores/movieStore";
+import movieStore from "../../stores/movieStore";
 // import genreStore from "../stores/genreStore";
 
 const MovieComments = ({ movieId }) => {

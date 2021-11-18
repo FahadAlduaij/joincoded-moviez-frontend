@@ -3,12 +3,12 @@ import { observer } from "mobx-react";
 import { useState } from "react";
 
 // Components
-import SearchBar from "./SearchBar";
+import SearchBar from "../SearchBar";
 import MoviesGenre from "./MoviesGenre";
 
 // Stores
 // import genreStore from "../stores/genreStore";
-import genreStore from "../stores/genreStore";
+import genreStore from "../../stores/genreStore";
 
 function MovieList() {
 	const [query, setQuery] = useState("");

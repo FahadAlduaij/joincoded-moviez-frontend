@@ -4,8 +4,8 @@ import { Route, Routes } from "react-router";
 // Components
 import NavBar from "./components/NavBar";
 import HomePage from "./components/Home/HomePage";
-import MovieList from "./components/MovieList";
-import MovieDetails from "./components/MovieDetails";
+import MovieList from "./components/Movies/MovieList";
+import MovieDetails from "./components/Movies/MovieDetails";
 import AdminPage from "./components/Admin/AdminPage";
 import GenreDetails from "./components/GenreDetails";
 import CelebrityDetail from "./components/CelebrityDetail";

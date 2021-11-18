@@ -4,13 +4,13 @@ import { useParams } from "react-router";
 import { Navigate } from "react-router-dom";
 
 // Components
-import Tags from "./Tags";
+import Tags from "../Tags";
 import MovieCommentInput from "./MovieCommentInput";
 import MovieComments from "./MovieComments";
 
 // stores
-import movieStore from "../stores/movieStore";
-// import genreStore from "../stores/genreStore";
+import movieStore from "../../stores/movieStore";
+import genreStore from "../../stores/genreStore";
 
 function MovieDetails() {
 	const { movieSlug } = useParams();
@@ -34,6 +34,11 @@ function MovieDetails() {
 		/>
 	));
 
+	const handleDelete = (event) => {
+		event.preventDefault();
+		movieStore.deleteMovie(movie, genreStore.genres);
+	};
+
 	return (
 		<div>
 			<div className="container d-flex flex-row justify-content-start align-items-center p-2">
@@ -42,8 +47,10 @@ function MovieDetails() {
 					src={movie.image}
 					alt="showing the movie"
 				/>
-
 				<div className="movieDetails-info flex-column flex-fill">
+					<button className="btn btn-danger" onClick={handleDelete}>
+						Delete
+					</button>
 					<h1 className="">{movie.title}</h1>
 					<p className="">{movie.releaseDate}</p>
 					<p className="">{movie.description}</p>
