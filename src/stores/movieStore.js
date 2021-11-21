@@ -52,19 +52,23 @@ class MovieStore {
 		}
 	};
 
-	deleteMovie = async (movie, genre) => {
+	deleteMovie = async (movie, genres) => {
 		try {
-			// await instance.delete(`/movies/${movie._id}`);
-			console.log(movie._id);
-			genre.forEach((movie) => {
-				movie.movies.forEach((m) => {
-					console.log(m._id);
+			await instance.delete(`/movies/${movie._id}`);
+			genres.forEach((genreMovie) => {
+				const updatedGenre = genreMovie.movies.filter(
+					(_movie) => _movie._id !== movie._id
+				);
 
-					console.log(m.filter((x) => x._id !== movie._id));
-				});
+				genreMovie.movies = updatedGenre;
 			});
+			runInAction(() => {
+				this.movies = this.movies.filter((_movie) => _movie._id !== movie._id);
+			});
+			toast.error("Deleted Movie Successfully");
 		} catch (error) {
-			console.log(error);
+			console.error(error);
+			toast.warn("Something Went wrong!");
 		}
 	};
 
