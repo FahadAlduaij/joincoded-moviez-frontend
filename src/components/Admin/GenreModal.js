@@ -28,7 +28,11 @@ function GenreModal() {
 
 	return (
 		<>
-			<button className="adminButtons" variant="success" onClick={handleShow}>
+			<button
+				className="btn btn-outline-danger btn-lg "
+				variant="success"
+				onClick={handleShow}
+			>
 				New Genre
 			</button>
 

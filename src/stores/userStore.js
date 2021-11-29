@@ -1,6 +1,7 @@
 import decode from "jwt-decode";
 import { action, makeObservable, observable } from "mobx";
 import instance from "./instance";
+import { toast } from "react-toastify";
 
 class UserStore {
 	constructor() {
@@ -54,8 +55,10 @@ class UserStore {
 		try {
 			const res = await instance.post("/signin", userInfo);
 			this.setUser(res.data.token);
+			toast.success(`Welcome ${this.user.username}`);
 		} catch (error) {
 			console.log(error);
+			toast.warn("Your username or password is wrong.");
 		}
 	};
 
@@ -63,8 +66,10 @@ class UserStore {
 		try {
 			const res = await instance.post("/signup", userInfo);
 			this.setUser(res.data.token);
+			toast.success(`Welcome ${this.user.username}`);
 		} catch (error) {
 			console.log(error);
+			toast.warn("Try again please.");
 		}
 	};
 

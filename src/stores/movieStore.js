@@ -45,7 +45,7 @@ class MovieStore {
 				celebToUpdate.movies.push(res.data);
 			});
 
-			toast.success("Created a Movie Successfully");
+			toast.success("Movie Created");
 		} catch (error) {
 			toast.warn("Something Went wrong!");
 			console.log(error);
@@ -65,7 +65,7 @@ class MovieStore {
 			runInAction(() => {
 				this.movies = this.movies.filter((_movie) => _movie._id !== movie._id);
 			});
-			toast.error("Deleted Movie Successfully");
+			toast.error("Movie Deleted");
 		} catch (error) {
 			console.error(error);
 			toast.warn("Something Went wrong!");
@@ -80,9 +80,10 @@ class MovieStore {
 				`/movies/${movieId}/comments`,
 				commentInfo
 			);
-			console.log("before", upDateMovie);
-			upDateMovie.comments.push(res.data);
-			console.log("after", upDateMovie);
+			runInAction(() => {
+				upDateMovie.comments.push(res.data);
+				upDateMovie.comments.reverse();
+			});
 
 			toast.success("Comment Sent Successfully!");
 		} catch (error) {

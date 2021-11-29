@@ -12,11 +12,11 @@ function MoviesGenre({ genre, query }) {
 
 	if (movies.length >= 1) {
 		return (
-			<div>
+			<div className="container">
 				<Link className="genre-header-links" to={`/genres/${genre.slug}`}>
 					<h1>{genre.name}</h1>
 				</Link>
-				<div className="scrolling-wrapper row flex-row flex-nowrap pb-1 pt-2">
+				<div className="scrolling-wrapper row flex-nowrap pb-1 pt-2">
 					{movies}
 				</div>
 			</div>

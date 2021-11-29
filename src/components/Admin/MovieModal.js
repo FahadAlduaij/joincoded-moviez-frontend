@@ -94,7 +94,11 @@ function MovieModal() {
 
 	return (
 		<>
-			<button className="adminButtons" variant="success" onClick={handleShow}>
+			<button
+				className="btn btn-outline-danger btn-lg  "
+				variant="success"
+				onClick={handleShow}
+			>
 				New Movie
 			</button>
 
